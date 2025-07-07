@@ -124,7 +124,7 @@ export default function Component() {
       </section>
 
       {/* Services Grid */}
-      <section className="px-6 py-32 relative">
+      <section className="px-6 py-32 relative" id="curation">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-6xl md:text-7xl font-black mb-8 tracking-tighter">
@@ -139,7 +139,7 @@ export default function Component() {
 
           <div className="grid md:grid-cols-3 gap-12">
             {/* Curation */}
-            <Card className="bg-gradient-to-br from-purple-900/40 to-purple-800/20 border-purple-500/30 hover:border-purple-400/60 transition-all duration-500 group overflow-hidden backdrop-blur-sm transform hover:scale-105 hover:-translate-y-4 shadow-2xl hover:shadow-purple-500/25">
+            <Card className="bg-gradient-to-br from-purple-900/40 to-purple-800/20 border-purple-500/30 hover:border-purple-400/60 transition-all duration-500 group overflow-hidden backdrop-blur-sm transform hover:scale-105 hover:-translate-y-4 shadow-2xl hover:shadow-purple-500/25" id="curation-card">
               <CardContent className="p-10">
                 <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-purple-500/50">
                   <Eye className="w-10 h-10 text-white" />
@@ -167,7 +167,7 @@ export default function Component() {
             </Card>
 
             {/* Tokenization */}
-            <Card className="bg-gradient-to-br from-pink-900/40 to-pink-800/20 border-pink-500/30 hover:border-pink-400/60 transition-all duration-500 group overflow-hidden backdrop-blur-sm transform hover:scale-105 hover:-translate-y-4 shadow-2xl hover:shadow-pink-500/25">
+            <Card className="bg-gradient-to-br from-pink-900/40 to-pink-800/20 border-pink-500/30 hover:border-pink-400/60 transition-all duration-500 group overflow-hidden backdrop-blur-sm transform hover:scale-105 hover:-translate-y-4 shadow-2xl hover:shadow-pink-500/25" id="tokenization">
               <CardContent className="p-10">
                 <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-600 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-pink-500/50">
                   <Coins className="w-10 h-10 text-white" />
@@ -195,28 +195,28 @@ export default function Component() {
             </Card>
 
             {/* Awards */}
-            <Card className="bg-gradient-to-br from-cyan-900/40 to-blue-800/20 border-cyan-500/30 hover:border-cyan-400/60 transition-all duration-500 group overflow-hidden backdrop-blur-sm transform hover:scale-105 hover:-translate-y-4 shadow-2xl hover:shadow-cyan-500/25">
+            <Card className="bg-gradient-to-br from-cyan-900/40 to-blue-800/20 border-cyan-500/30 hover:border-cyan-400/60 transition-all duration-500 group overflow-hidden backdrop-blur-sm transform hover:scale-105 hover:-translate-y-4 shadow-2xl hover:shadow-cyan-500/25" id="awards">
               <CardContent className="p-10">
                 <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-cyan-500/50">
                   <Trophy className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-3xl font-black mb-6 text-cyan-200 tracking-wide">Awards Program</h3>
+                <h3 className="text-3xl font-black mb-6 text-cyan-200 tracking-wide">Awards & Recognition</h3>
                 <p className="text-gray-300 mb-8 leading-relaxed text-lg font-light">
-                  Recognition and rewards for outstanding digital artists. Celebrate excellence and innovation in the
-                  NFT art space.
+                  Celebrate outstanding achievements in digital art. Our awards program recognizes top creators and their
+                  contributions to the NFT space.
                 </p>
                 <ul className="space-y-4 text-gray-200">
                   <li className="flex items-center text-lg">
                     <Zap className="w-5 h-5 mr-4 text-cyan-400 animate-pulse" />
-                    <span className="font-medium">Monthly Competitions</span>
+                    <span className="font-medium">Annual Art Awards</span>
                   </li>
                   <li className="flex items-center text-lg">
                     <Zap className="w-5 h-5 mr-4 text-cyan-400 animate-pulse" />
-                    <span className="font-medium">Cash Prizes</span>
+                    <span className="font-medium">Community Recognition</span>
                   </li>
                   <li className="flex items-center text-lg">
                     <Zap className="w-5 h-5 mr-4 text-cyan-400 animate-pulse" />
-                    <span className="font-medium">Global Recognition</span>
+                    <span className="font-medium">Exclusive Showcases</span>
                   </li>
                 </ul>
               </CardContent>
