@@ -5,6 +5,8 @@ import { ArrowRight, Palette, Coins, Star, Zap, Users, Trophy, Sparkles, Eye, Pl
 import Image from "next/image"
 import Link from "next/link"
 import { SidebarProvider, Sidebar, SidebarTrigger } from "@/components/ui/sidebar"
+import { HeroSection } from "@/components/hero-section"
+import { ServicesSection } from "@/components/services-section"
 
 export default function Component() {
   return (
@@ -72,6 +74,7 @@ export default function Component() {
             </div>
           </nav>
         </header>
+        
         {/* Mobile Sidebar Menu */}
         <Sidebar collapsible="offcanvas">
           <div className="flex flex-col gap-4 p-6">
@@ -100,163 +103,10 @@ export default function Component() {
         </Sidebar>
 
         {/* Hero Section */}
-        <section className="relative px-6 py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-black to-pink-900/30" />
+        <HeroSection />
 
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
-            <Badge className="mb-8 bg-gradient-to-r from-purple-600/30 to-pink-600/30 border-purple-500/50 text-purple-200 px-6 py-2 text-lg font-medium backdrop-blur-sm animate-fade-in-up">
-              <Star className="w-5 h-5 mr-3 animate-spin" style={{ animationDuration: "3s" }} />
-              Top NFT Art Platform
-            </Badge>
-
-            <div className="space-y-6 mb-12">
-              <h1 className="text-7xl md:text-9xl font-black leading-none tracking-tighter">
-                <span className="block bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent animate-text-reveal">
-                  Elevate
-                </span>
-                <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-text-reveal-delayed transform hover:scale-105 transition-transform duration-500">
-                  Digital Art
-                </span>
-              </h1>
-            </div>
-
-            <p className="text-2xl md:text-3xl text-gray-200 mb-16 max-w-4xl mx-auto leading-relaxed font-light tracking-wide animate-fade-in-up-delayed">
-              Premier NFT art curation, tokenization, and awards platform.
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
-                Discover, create, and celebrate
-              </span>{" "}
-              the future of digital artistry.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up-slow">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 border-0 text-xl px-12 py-6 font-bold tracking-wide transform hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-purple-500/50 group"
-              >
-                <Play className="mr-3 w-6 h-6 group-hover:animate-pulse" />
-                Explore Gallery
-                <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-purple-500/50 text-purple-200 hover:bg-purple-500/20 text-xl px-12 py-6 font-bold tracking-wide backdrop-blur-sm transform hover:scale-110 transition-all duration-500 hover:border-purple-400"
-              >
-                Submit Art
-              </Button>
-            </div>
-          </div>
-
-          {/* Floating Art Pieces */}
-          <div className="absolute top-20 right-20 w-32 h-32 opacity-20 animate-float">
-            <div className="w-full h-full bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl transform rotate-12" />
-          </div>
-          <div className="absolute bottom-32 left-20 w-24 h-24 opacity-20 animate-float-delayed">
-            <div className="w-full h-full bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full" />
-          </div>
-        </section>
-
-        {/* Services Grid */}
-        <section className="px-6 py-32 relative" id="curation">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="text-6xl md:text-7xl font-black mb-8 tracking-tighter">
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-text-shimmer">
-                  Our Services
-                </span>
-              </h2>
-              <p className="text-2xl text-gray-300 max-w-3xl mx-auto font-light tracking-wide leading-relaxed">
-                Comprehensive solutions for the modern digital art ecosystem
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-12">
-              {/* Curation */}
-              <Card className="bg-gradient-to-br from-purple-900/40 to-purple-800/20 border-purple-500/30 hover:border-purple-400/60 transition-all duration-500 group overflow-hidden backdrop-blur-sm transform hover:scale-105 hover:-translate-y-4 shadow-2xl hover:shadow-purple-500/25" id="curation-card">
-                <CardContent className="p-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-purple-500/50">
-                    <Eye className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-black mb-6 text-purple-200 tracking-wide">Art Curation</h3>
-                  <p className="text-gray-300 mb-8 leading-relaxed text-lg font-light">
-                    Expert curation of exceptional digital artworks. Our team identifies and showcases the most innovative
-                    and valuable NFT art pieces.
-                  </p>
-                  <ul className="space-y-4 text-gray-200">
-                    <li className="flex items-center text-lg">
-                      <Zap className="w-5 h-5 mr-4 text-purple-400 animate-pulse" />
-                      <span className="font-medium">Expert Art Selection</span>
-                    </li>
-                    <li className="flex items-center text-lg">
-                      <Zap className="w-5 h-5 mr-4 text-purple-400 animate-pulse" />
-                      <span className="font-medium">Quality Verification</span>
-                    </li>
-                    <li className="flex items-center text-lg">
-                      <Zap className="w-5 h-5 mr-4 text-purple-400 animate-pulse" />
-                      <span className="font-medium">Trend Analysis</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Tokenization */}
-              <Card className="bg-gradient-to-br from-pink-900/40 to-pink-800/20 border-pink-500/30 hover:border-pink-400/60 transition-all duration-500 group overflow-hidden backdrop-blur-sm transform hover:scale-105 hover:-translate-y-4 shadow-2xl hover:shadow-pink-500/25" id="tokenization">
-                <CardContent className="p-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-600 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-pink-500/50">
-                    <Coins className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-black mb-6 text-pink-200 tracking-wide">Tokenization</h3>
-                  <p className="text-gray-300 mb-8 leading-relaxed text-lg font-light">
-                    Seamless conversion of digital art into NFTs. We handle the technical complexity while you focus on
-                    creating amazing art.
-                  </p>
-                  <ul className="space-y-4 text-gray-200">
-                    <li className="flex items-center text-lg">
-                      <Zap className="w-5 h-5 mr-4 text-pink-400 animate-pulse" />
-                      <span className="font-medium">Smart Contract Creation</span>
-                    </li>
-                    <li className="flex items-center text-lg">
-                      <Zap className="w-5 h-5 mr-4 text-pink-400 animate-pulse" />
-                      <span className="font-medium">Metadata Management</span>
-                    </li>
-                    <li className="flex items-center text-lg">
-                      <Zap className="w-5 h-5 mr-4 text-pink-400 animate-pulse" />
-                      <span className="font-medium">Multi-Chain Support</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Awards */}
-              <Card className="bg-gradient-to-br from-cyan-900/40 to-blue-800/20 border-cyan-500/30 hover:border-cyan-400/60 transition-all duration-500 group overflow-hidden backdrop-blur-sm transform hover:scale-105 hover:-translate-y-4 shadow-2xl hover:shadow-cyan-500/25" id="awards">
-                <CardContent className="p-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-cyan-500/50">
-                    <Trophy className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-black mb-6 text-cyan-200 tracking-wide">Awards & Recognition</h3>
-                  <p className="text-gray-300 mb-8 leading-relaxed text-lg font-light">
-                    Celebrate outstanding achievements in digital art. Our awards program recognizes top creators and their
-                    contributions to the NFT space.
-                  </p>
-                  <ul className="space-y-4 text-gray-200">
-                    <li className="flex items-center text-lg">
-                      <Zap className="w-5 h-5 mr-4 text-cyan-400 animate-pulse" />
-                      <span className="font-medium">Annual Art Awards</span>
-                    </li>
-                    <li className="flex items-center text-lg">
-                      <Zap className="w-5 h-5 mr-4 text-cyan-400 animate-pulse" />
-                      <span className="font-medium">Community Recognition</span>
-                    </li>
-                    <li className="flex items-center text-lg">
-                      <Zap className="w-5 h-5 mr-4 text-cyan-400 animate-pulse" />
-                      <span className="font-medium">Exclusive Showcases</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
+        {/* Services Section */}
+        <ServicesSection />
 
         {/* Featured Gallery */}
         <section className="px-6 py-32 bg-gradient-to-r from-purple-900/20 via-black to-pink-900/20 relative overflow-hidden">

@@ -5,11 +5,62 @@
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  /* Mobile performance optimizations */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Reduce animations on mobile for better performance */
+  .animate-float,
+  .animate-float-delayed,
+  .animate-float-slow {
+    animation-duration: 8s;
+  }
+  
+  /* Optimize touch targets */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve scrolling performance */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Touch-friendly hover states for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .hover\:scale-110:hover,
+  .hover\:scale-105:hover,
+  .hover\:rotate-12:hover {
+    transform: none;
+  }
+  
+  .hover\:shadow-purple-500\/25:hover,
+  .hover\:shadow-pink-500\/25:hover,
+  .hover\:shadow-cyan-500\/25:hover {
+    box-shadow: none;
   }
 }
 
