@@ -48,19 +48,19 @@ export default function Component() {
             <div className="hidden md:flex items-center space-x-8">
               <Link
                 href="#curation"
-                className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide"
+                className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded"
               >
                 Curation
               </Link>
               <Link
                 href="#tokenization"
-                className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide"
+                className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded"
               >
                 Tokenization
               </Link>
               <Link
                 href="#awards"
-                className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide"
+                className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded"
               >
                 Awards
               </Link>
@@ -80,19 +80,19 @@ export default function Component() {
           <div className="flex flex-col gap-4 p-6">
             <Link
               href="#curation"
-              className="text-gray-300 hover:text-white transition-all duration-300 font-medium tracking-wide text-lg py-2"
+              className="text-gray-300 hover:text-white transition-all duration-300 font-medium tracking-wide text-lg py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded"
             >
               Curation
             </Link>
             <Link
               href="#tokenization"
-              className="text-gray-300 hover:text-white transition-all duration-300 font-medium tracking-wide text-lg py-2"
+              className="text-gray-300 hover:text-white transition-all duration-300 font-medium tracking-wide text-lg py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded"
             >
               Tokenization
             </Link>
             <Link
               href="#awards"
-              className="text-gray-300 hover:text-white transition-all duration-300 font-medium tracking-wide text-lg py-2"
+              className="text-gray-300 hover:text-white transition-all duration-300 font-medium tracking-wide text-lg py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded"
             >
               Awards
             </Link>
