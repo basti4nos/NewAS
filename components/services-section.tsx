@@ -30,29 +30,36 @@ const services = [
 
 const colorClasses = {
   purple: {
-    card: "bg-gradient-to-br from-purple-900/40 to-purple-800/20 border-purple-500/30 hover:border-purple-400/60 hover:shadow-purple-500/25",
-    icon: "bg-gradient-to-br from-purple-500 to-purple-600 shadow-purple-500/50",
-    title: "text-purple-200",
-    zap: "text-purple-400"
+    card: "bg-gradient-to-br from-purple-600/80 to-purple-800/60 border-purple-400/80 hover:border-purple-300 hover:shadow-purple-400/40 shadow-purple-500/30",
+    icon: "bg-gradient-to-br from-purple-400 to-purple-600 shadow-purple-400/60 shadow-lg",
+    title: "text-purple-100",
+    zap: "text-purple-300",
+    description: "text-purple-100/90",
+    features: "text-purple-50"
   },
   pink: {
-    card: "bg-gradient-to-br from-pink-900/40 to-pink-800/20 border-pink-500/30 hover:border-pink-400/60 hover:shadow-pink-500/25",
-    icon: "bg-gradient-to-br from-pink-500 to-pink-600 shadow-pink-500/50",
-    title: "text-pink-200",
-    zap: "text-pink-400"
+    card: "bg-gradient-to-br from-pink-600/80 to-pink-800/60 border-pink-400/80 hover:border-pink-300 hover:shadow-pink-400/40 shadow-pink-500/30",
+    icon: "bg-gradient-to-br from-pink-400 to-pink-600 shadow-pink-400/60 shadow-lg",
+    title: "text-pink-100",
+    zap: "text-pink-300",
+    description: "text-pink-100/90",
+    features: "text-pink-50"
   },
   cyan: {
-    card: "bg-gradient-to-br from-cyan-900/40 to-blue-800/20 border-cyan-500/30 hover:border-cyan-400/60 hover:shadow-cyan-500/25",
-    icon: "bg-gradient-to-br from-cyan-500 to-blue-500 shadow-cyan-500/50",
-    title: "text-cyan-200",
-    zap: "text-cyan-400"
+    card: "bg-gradient-to-br from-cyan-600/80 to-blue-800/60 border-cyan-400/80 hover:border-cyan-300 hover:shadow-cyan-400/40 shadow-cyan-500/30",
+    icon: "bg-gradient-to-br from-cyan-400 to-blue-500 shadow-cyan-400/60 shadow-lg",
+    title: "text-cyan-100",
+    zap: "text-cyan-300",
+    description: "text-cyan-100/90",
+    features: "text-cyan-50"
   }
 }
 
 export function ServicesSection() {
   return (
-    <section className="px-6 py-32 relative" id="curation">
-      <div className="max-w-7xl mx-auto">
+    <section className="px-6 py-32 relative bg-gradient-to-br from-purple-900/20 via-black to-pink-900/20" id="curation">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.15)_0%,transparent_70%)]" />
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-6xl md:text-7xl font-black mb-8 tracking-tighter">
             <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-text-shimmer">
@@ -77,18 +84,18 @@ export function ServicesSection() {
               >
                 <CardContent className="p-10">
                   <div className={`w-20 h-20 ${colors.icon} rounded-3xl flex items-center justify-center mb-8 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg`}>
-                    <IconComponent className="w-10 h-10 text-white" />
+                    <IconComponent className="w-10 h-10 text-white drop-shadow-lg" />
                   </div>
-                  <h3 className={`text-3xl font-black mb-6 ${colors.title} tracking-wide`}>
+                  <h3 className={`text-3xl font-black mb-6 ${colors.title} tracking-wide drop-shadow-sm`}>
                     {service.title}
                   </h3>
-                  <p className="text-gray-300 mb-8 leading-relaxed text-lg font-light">
+                  <p className={`${colors.description} mb-8 leading-relaxed text-lg font-light`}>
                     {service.description}
                   </p>
-                  <ul className="space-y-4 text-gray-200">
+                  <ul className={`space-y-4 ${colors.features}`}>
                     {service.features.map((feature, index) => (
                       <li key={index} className="flex items-center text-lg">
-                        <Zap className={`w-5 h-5 mr-4 ${colors.zap} animate-pulse`} />
+                        <Zap className={`w-5 h-5 mr-4 ${colors.zap} animate-pulse drop-shadow-sm`} />
                         <span className="font-medium">{feature}</span>
                       </li>
                     ))}
