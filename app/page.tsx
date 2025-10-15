@@ -4,14 +4,13 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Palette, Coins, Star, Zap, Users, Trophy, Sparkles, Eye, Play } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { SidebarProvider, Sidebar, SidebarTrigger } from "@/components/ui/sidebar"
 import { HeroSection } from "@/components/hero-section"
 import { ServicesSection } from "@/components/services-section"
 import { AnimationFallback } from "@/components/animation-fallback"
 
 export default function Component() {
   return (
-    <SidebarProvider>
+    <>
       <AnimationFallback />
       <div className="min-h-screen bg-black text-white overflow-hidden relative">
         {/* Animated Background Elements */}
@@ -35,74 +34,6 @@ export default function Component() {
           <div className="absolute bottom-1/4 left-1/3 w-5 h-5 bg-yellow-400 rotate-12 animate-float" />
         </div>
 
-        {/* Header */}
-        <header className="relative z-50 px-6 py-6 backdrop-blur-sm bg-black/20 border-b border-white/10">
-          <nav className="flex items-center justify-between max-w-7xl mx-auto">
-            <div className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-purple-500/25">
-                <Sparkles className="w-6 h-6 text-white animate-pulse" />
-              </div>
-              <span className="text-3xl font-black bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent tracking-wider animate-shimmer">
-                ASKNIGHTS
-              </span>
-            </div>
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center space-x-8">
-              <Link
-                href="#curation"
-                className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded"
-              >
-                Curation
-              </Link>
-              <Link
-                href="#tokenization"
-                className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded"
-              >
-                Tokenization
-              </Link>
-              <Link
-                href="#awards"
-                className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded"
-              >
-                Awards
-              </Link>
-              <Button className="bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 border-0 px-6 py-3 font-semibold tracking-wide transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
-                Get Started
-              </Button>
-            </div>
-            {/* Mobile Hamburger */}
-            <div className="md:hidden flex items-center">
-              <SidebarTrigger />
-            </div>
-          </nav>
-        </header>
-        
-        {/* Mobile Sidebar Menu */}
-        <Sidebar collapsible="offcanvas">
-          <div className="flex flex-col gap-4 p-6">
-            <Link
-              href="#curation"
-              className="text-gray-300 hover:text-white transition-all duration-300 font-medium tracking-wide text-lg py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded"
-            >
-              Curation
-            </Link>
-            <Link
-              href="#tokenization"
-              className="text-gray-300 hover:text-white transition-all duration-300 font-medium tracking-wide text-lg py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded"
-            >
-              Tokenization
-            </Link>
-            <Link
-              href="#awards"
-              className="text-gray-300 hover:text-white transition-all duration-300 font-medium tracking-wide text-lg py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black rounded"
-            >
-              Awards
-            </Link>
-            <Button className="bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 border-0 px-6 py-3 font-semibold tracking-wide mt-4">
-              Get Started
-            </Button>
-          </div>
-        </Sidebar>
 
         {/* Hero Section */}
         <HeroSection />
@@ -275,6 +206,6 @@ export default function Component() {
           </div>
         </footer>
       </div>
-    </SidebarProvider>
+    </>
   )
 }
