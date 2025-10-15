@@ -1,0 +1,21 @@
+{
+  "name": "ASKNIGHTS - Premier NFT Art Platform",
+  "short_name": "ASKNIGHTS",
+  "description": "Discover, create, and celebrate digital art on ASKNIGHTS. Premier NFT art curation, tokenization, and awards platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#a855f7",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
