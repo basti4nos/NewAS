@@ -294,6 +294,7 @@ body {
 
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
+  opacity: 0;
 }
 
 .animate-fade-in-up-delayed {
@@ -304,6 +305,26 @@ body {
 .animate-fade-in-up-slow {
   animation: fade-in-up-slow 0.8s ease-out 0.8s forwards;
   opacity: 0;
+}
+
+/* Fallback for reduced motion or animation issues */
+@media (prefers-reduced-motion: reduce) {
+  .animate-text-reveal,
+  .animate-text-reveal-delayed,
+  .animate-fade-in-up,
+  .animate-fade-in-up-delayed,
+  .animate-fade-in-up-slow {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* Ensure elements are visible after animation completes */
+.animate-text-reveal-delayed.animation-complete,
+.animate-fade-in-up-delayed.animation-complete,
+.animate-fade-in-up-slow.animation-complete {
+  opacity: 1;
 }
 
 .animate-text-shimmer {

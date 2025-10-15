@@ -7,10 +7,12 @@ import Link from "next/link"
 import { SidebarProvider, Sidebar, SidebarTrigger } from "@/components/ui/sidebar"
 import { HeroSection } from "@/components/hero-section"
 import { ServicesSection } from "@/components/services-section"
+import { AnimationFallback } from "@/components/animation-fallback"
 
 export default function Component() {
   return (
     <SidebarProvider>
+      <AnimationFallback />
       <div className="min-h-screen bg-black text-white overflow-hidden relative">
         {/* Animated Background Elements */}
         <div className="fixed inset-0 pointer-events-none">
