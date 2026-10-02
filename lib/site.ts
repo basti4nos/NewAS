@@ -76,6 +76,9 @@ export function pageMetadata(
       title,
       description,
       url: path,
+      siteName: site.name,
+      locale: site.ogLocale,
+      type: "website",
     },
   }
 }

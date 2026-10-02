@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     title: site.name,
     description: site.description,
     url: "/",
+    siteName: site.name,
+    locale: site.ogLocale,
+    type: "website",
   },
 }
 
