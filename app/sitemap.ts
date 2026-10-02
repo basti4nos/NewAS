@@ -1,13 +1,22 @@
-import type { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next"
+import { site } from "@/lib/site"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://asknights.com'
-  const routes = ['', '/#curation', '/#tokenization', '/#awards']
+  const paths = [
+    "",
+    "/magazine",
+    "/exhibitions",
+    "/marketplace",
+    "/about",
+    "/contact",
+    "/privacy",
+    "/terms",
+  ]
+  const lastModified = new Date()
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: route === '' ? 1 : 0.5,
+  return paths.map((path) => ({
+    url: `${site.url}${path || "/"}`,
+    lastModified,
+    priority: path === "" ? 1 : 0.6,
   }))
 }

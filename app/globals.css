@@ -2,43 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-  /* Mobile performance optimizations */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
+/* Provisional palette: charcoal, soft white, one brass accent.
+   Official dApp tokens were not available for this public repo. */
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  :root {
+    --background: 60 3% 7%;
+    --foreground: 40 30% 95%;
+    --card: 40 6% 11%;
+    --card-foreground: 40 30% 95%;
+    --popover: 40 6% 11%;
+    --popover-foreground: 40 30% 95%;
+    --primary: 40 30% 95%;
+    --primary-foreground: 60 3% 7%;
+    --secondary: 40 5% 16%;
+    --secondary-foreground: 40 30% 95%;
+    --muted: 40 5% 16%;
+    --muted-foreground: 36 12% 76%;
+    --accent: 38 32% 66%;
+    --accent-foreground: 60 3% 7%;
+    --destructive: 0 55% 42%;
+    --destructive-foreground: 40 30% 95%;
+    --border: 40 5% 20%;
+    --input: 40 5% 20%;
+    --ring: 38 32% 66%;
+    --radius: 0.125rem;
   }
-}
 
-/* Mobile-specific optimizations */
-@media (max-width: 768px) {
-  /* Reduce animations on mobile for better performance */
-  .animate-float,
-  .animate-float-delayed,
-  .animate-float-slow {
-    animation-duration: 8s;
-  }
-  
-  /* Optimize touch targets */
-  button, a, [role="button"] {
-    min-height: 44px;
-    min-width: 44px;
-  }
-  
-  /* Improve scrolling performance */
   * {
-    -webkit-overflow-scrolling: touch;
+    @apply border-border;
+  }
+
+  html {
+    background: #121211;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv11";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: #c6b48a;
+    color: #121211;
   }
 }
 
-/* Accessibility: Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -46,325 +57,6 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-}
-
-/* Touch-friendly hover states for mobile */
-@media (hover: none) and (pointer: coarse) {
-  .hover\:scale-110:hover,
-  .hover\:scale-105:hover,
-  .hover\:rotate-12:hover {
-    transform: none;
-  }
-  
-  .hover\:shadow-purple-500\/25:hover,
-  .hover\:shadow-pink-500\/25:hover,
-  .hover\:shadow-cyan-500\/25:hover {
-    box-shadow: none;
-  }
-}
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-/* Custom Animations */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(5deg);
-  }
-}
-
-@keyframes float-delayed {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-15px) rotate(-3deg);
-  }
-}
-
-@keyframes float-slow {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(2deg);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
-
-@keyframes text-reveal {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes text-reveal-delayed {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in-up-delayed {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in-up-slow {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes text-shimmer {
-  0% {
-    background-position: -200% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
-
-@keyframes counter {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-  animation: float-delayed 8s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
-.animate-float-slow {
-  animation: float-slow 10s ease-in-out infinite;
-  animation-delay: 4s;
-}
-
-.animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
-}
-
-.animate-text-reveal {
-  animation: text-reveal 1s ease-out forwards;
-}
-
-.animate-text-reveal-delayed {
-  animation: text-reveal-delayed 1s ease-out 0.3s forwards;
-  opacity: 0;
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
-  opacity: 0;
-}
-
-.animate-fade-in-up-delayed {
-  animation: fade-in-up-delayed 0.8s ease-out 0.5s forwards;
-  opacity: 0;
-}
-
-.animate-fade-in-up-slow {
-  animation: fade-in-up-slow 0.8s ease-out 0.8s forwards;
-  opacity: 0;
-}
-
-/* Fallback for reduced motion or animation issues */
-@media (prefers-reduced-motion: reduce) {
-  .animate-text-reveal,
-  .animate-text-reveal-delayed,
-  .animate-fade-in-up,
-  .animate-fade-in-up-delayed,
-  .animate-fade-in-up-slow {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-  }
-}
-
-/* Ensure elements are visible after animation completes */
-.animate-text-reveal-delayed.animation-complete,
-.animate-fade-in-up-delayed.animation-complete,
-.animate-fade-in-up-slow.animation-complete {
-  opacity: 1;
-}
-
-.animate-text-shimmer {
-  background: linear-gradient(90deg, #a855f7, #ec4899, #06b6d4, #a855f7);
-  background-size: 200% 100%;
-  animation: text-shimmer 4s ease-in-out infinite;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-.animate-counter {
-  animation: counter 1.5s ease-out forwards;
-}
-
-/* Improved text readability */
-.text-shadow-lg {
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* Enhanced backdrop blur */
-.backdrop-blur-enhanced {
-  backdrop-filter: blur(20px) saturate(180%);
-}
-
-/* Gradient text with better contrast */
-.gradient-text-enhanced {
-  background: linear-gradient(135deg, #ffffff 0%, #e879f9 25%, #a855f7 50%, #06b6d4 75%, #ffffff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% 200%;
-  animation: gradient-shift 4s ease infinite;
-}
-
-@keyframes gradient-shift {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
+    scroll-behavior: auto !important;
   }
 }

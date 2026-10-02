@@ -1,211 +1,129 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Palette, Coins, Star, Zap, Users, Trophy, Sparkles, Eye, Play } from "lucide-react"
-import Image from "next/image"
+import type { Metadata } from "next"
 import Link from "next/link"
-import { HeroSection } from "@/components/hero-section"
-import { ServicesSection } from "@/components/services-section"
-import { AnimationFallback } from "@/components/animation-fallback"
+import { ArtworkPlaceholder } from "@/components/artwork-placeholder"
+import { exhibitions, site } from "@/lib/site"
 
-export default function Component() {
+export const metadata: Metadata = {
+  description: site.description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: site.name,
+    description: site.description,
+    url: "/",
+  },
+}
+
+const programme = [
+  {
+    title: "Magazine",
+    text: "ASKNIGHTS Magazine. Curated editorial on digital art.",
+    href: "/magazine",
+    link: "Read",
+  },
+  {
+    title: "Exhibitions",
+    text: `${exhibitions.portals.title}, and ${exhibitions.rareBits.title}.`,
+    href: "/exhibitions",
+    link: "View",
+  },
+  {
+    title: "Preservation",
+    text: "Preservation and archival of NFT art.",
+    href: "/about#preservation",
+    link: "About",
+  },
+  {
+    title: "Marketplace",
+    text: "A curated marketplace, in development on testnet. Coming soon.",
+    href: "/marketplace",
+    link: "Status",
+  },
+]
+
+export default function HomePage() {
   return (
     <>
-      <AnimationFallback />
-      <div className="min-h-screen bg-black text-white overflow-hidden relative">
-        {/* Animated Background Elements */}
-        <div className="fixed inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse" />
-          <div
-            className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-bounce"
-            style={{ animationDuration: "3s" }}
-          />
-          <div
-            className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-full blur-3xl animate-spin"
-            style={{ animationDuration: "20s" }}
-          />
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <p className="text-xs uppercase tracking-[0.22em] text-accent">
+            {site.brandStrip}
+          </p>
+          <h1 className="mt-8 font-serif text-6xl leading-none text-foreground md:text-8xl">
+            ASKNIGHTS
+          </h1>
+          <div className="mt-8 h-px w-16 bg-accent" />
+          <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            Founded in {site.founded}. NFT art curation, phygitals (physical-digital
+            art), and Metaverse exposure.
+          </p>
+          <p className="mt-6 text-foreground">{site.positioning}</p>
+          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm tracking-wide">
+            <Link href="/exhibitions" className="underline decoration-accent underline-offset-4">
+              Exhibitions
+            </Link>
+            <Link href="/magazine" className="underline decoration-accent underline-offset-4">
+              Magazine
+            </Link>
+          </div>
         </div>
+      </section>
 
-        {/* Floating Geometric Shapes */}
-        <div className="fixed inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-purple-400 rotate-45 animate-float" />
-          <div className="absolute top-3/4 right-1/4 w-6 h-6 bg-pink-400 rounded-full animate-float-delayed" />
-          <div className="absolute top-1/2 right-1/3 w-3 h-8 bg-cyan-400 animate-float-slow" />
-          <div className="absolute bottom-1/4 left-1/3 w-5 h-5 bg-yellow-400 rotate-12 animate-float" />
-        </div>
-
-
-        {/* Hero Section */}
-        <HeroSection />
-
-        {/* Services Section */}
-        <ServicesSection />
-
-        {/* Featured Gallery */}
-        <section className="px-6 py-32 bg-gradient-to-r from-purple-900/20 via-black to-pink-900/20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.1)_0%,transparent_50%)]" />
-
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="text-center mb-20">
-              <h2 className="text-6xl md:text-7xl font-black mb-8 tracking-tighter">
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-text-shimmer">
-                  Featured Collection
-                </span>
-              </h2>
-              <p className="text-2xl text-gray-300 font-light tracking-wide">
-                Discover extraordinary digital artworks from our curated collection
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-10">
-              {[1, 2, 3, 4, 5, 6].map((item, index) => (
-                <Card
-                  key={item}
-                  className="bg-gray-900/60 border-gray-700/50 hover:border-purple-500/60 transition-all duration-500 group overflow-hidden backdrop-blur-sm transform hover:scale-110 hover:-translate-y-6 shadow-2xl hover:shadow-purple-500/25"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="aspect-square relative overflow-hidden">
-                    <Image
-                      src={`/placeholder.svg?height=400&width=400`}
-                      alt={`Featured Art ${item}`}
-                      width={400}
-                      height={400}
-                      className="object-cover group-hover:scale-125 transition-transform duration-700 filter group-hover:brightness-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                    <div className="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                      <h4 className="text-white font-bold text-xl mb-2 tracking-wide">Digital Dreams #{item}</h4>
-                      <p className="text-gray-200 text-lg font-light">By Artist Name</p>
-                    </div>
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-
-            <div className="text-center mt-16">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 border-0 text-xl px-12 py-6 font-bold tracking-wide transform hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-purple-500/50 group"
+      <section aria-labelledby="programme-heading" className="border-b border-border">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <h2 id="programme-heading" className="font-serif text-4xl">
+            Programme
+          </h2>
+          <ul className="mt-10 divide-y divide-border border-y border-border">
+            {programme.map((item) => (
+              <li
+                key={item.title}
+                className="grid gap-3 py-8 md:grid-cols-12 md:items-baseline md:gap-6"
               >
-                View Full Gallery
-                <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
-              </Button>
-            </div>
-          </div>
-        </section>
+                <h3 className="font-serif text-2xl md:col-span-3">{item.title}</h3>
+                <p className="text-muted-foreground md:col-span-7">{item.text}</p>
+                <Link
+                  href={item.href}
+                  className="text-sm tracking-wide text-foreground underline decoration-accent underline-offset-4 md:col-span-2"
+                >
+                  {item.link}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-        {/* Stats Section */}
-        <section className="px-6 py-32 relative">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-12 text-center">
-              {[
-                { number: "10K+", label: "Artworks Curated", color: "from-purple-400 to-pink-400" },
-                { number: "500+", label: "Artists Featured", color: "from-pink-400 to-cyan-400" },
-                { number: "$2M+", label: "Awards Distributed", color: "from-cyan-400 to-blue-400" },
-                { number: "50K+", label: "Community Members", color: "from-blue-400 to-purple-400" },
-              ].map((stat, index) => (
-                <div key={index} className="space-y-4 group transform hover:scale-110 transition-all duration-500">
-                  <div
-                    className={`text-6xl md:text-7xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent animate-counter group-hover:animate-pulse`}
-                  >
-                    {stat.number}
-                  </div>
-                  <p className="text-gray-300 text-xl font-medium tracking-wide">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="px-6 py-32 bg-gradient-to-r from-purple-900/30 via-black to-pink-900/30 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.15)_0%,transparent_70%)]" />
-
-          <div className="max-w-5xl mx-auto text-center relative z-10">
-            <h2 className="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-none">
-              <span className="bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent animate-text-shimmer">
-                Ready to Elevate
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                Your Art?
-              </span>
+      <section aria-labelledby="exhibitions-heading">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <div className="flex items-end justify-between gap-6">
+            <h2 id="exhibitions-heading" className="font-serif text-4xl">
+              Exhibitions
             </h2>
-            <p className="text-2xl text-gray-200 mb-12 max-w-3xl mx-auto font-light tracking-wide leading-relaxed">
-              Join the premier platform for NFT art curation, tokenization, and recognition.
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
-                Start your journey
-              </span>{" "}
-              in the digital art revolution today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 border-0 text-xl px-12 py-6 font-bold tracking-wide transform hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-purple-500/50 group"
-              >
-                <Palette className="mr-3 w-6 h-6 group-hover:animate-spin" />
-                Submit Your Art
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-purple-500/50 text-purple-200 hover:bg-purple-500/20 text-xl px-12 py-6 font-bold tracking-wide backdrop-blur-sm transform hover:scale-110 transition-all duration-500 hover:border-purple-400 group"
-              >
-                <Users className="mr-3 w-6 h-6 group-hover:animate-bounce" />
-                Join Community
-              </Button>
-            </div>
+            <Link
+              href="/exhibitions"
+              className="text-sm tracking-wide underline decoration-accent underline-offset-4"
+            >
+              All exhibitions
+            </Link>
           </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="px-6 py-16 border-t border-gray-800/50 backdrop-blur-sm bg-black/20">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="flex items-center space-x-3 mb-6 md:mb-0 group">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-purple-500/25">
-                  <Sparkles className="w-6 h-6 text-white animate-pulse" />
-                </div>
-                <span className="text-3xl font-black bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent tracking-wider">
-                  ASKNIGHTS
-                </span>
+          <div className="mt-12 grid gap-12 md:grid-cols-2">
+            <article>
+              <h3 className="font-serif text-3xl">{exhibitions.portals.title}</h3>
+              <p className="mt-4 text-muted-foreground">{exhibitions.portals.summary}</p>
+              <div className="mt-8">
+                <ArtworkPlaceholder label="Portals — artwork to follow" />
               </div>
-              <div className="flex space-x-8 text-gray-400">
-                <Link
-                  href="#"
-                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
-                >
-                  Privacy
-                </Link>
-                <Link
-                  href="#"
-                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
-                >
-                  Terms
-                </Link>
-                <Link
-                  href="#"
-                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
-                >
-                  Contact
-                </Link>
+            </article>
+            <article>
+              <h3 className="font-serif text-3xl">{exhibitions.rareBits.title}</h3>
+              <p className="mt-4 text-muted-foreground">{exhibitions.rareBits.summary}</p>
+              <div className="mt-8">
+                <ArtworkPlaceholder label="Rare Bits & Bytes — artwork to follow" />
               </div>
-            </div>
-            <div className="mt-12 pt-8 border-t border-gray-800/50 text-center text-gray-400">
-              <p className="text-lg font-light tracking-wide">
-                &copy; 2024 ASKNIGHTS. All rights reserved.
-                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
-                  Elevating digital art to new heights.
-                </span>
-              </p>
-            </div>
+            </article>
           </div>
-        </footer>
-      </div>
+        </div>
+      </section>
     </>
   )
 }
