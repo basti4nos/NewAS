@@ -1,64 +1,102 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import { Inter } from 'next/font/google'
+import type { Metadata, Viewport } from "next"
+import { Cormorant_Garamond, Inter } from "next/font/google"
+import { Analytics } from "@/components/analytics"
+import { SiteFooter } from "@/components/site-footer"
+import { SiteHeader } from "@/components/site-header"
+import { isSiteIndexable, site } from "@/lib/site"
+import "./globals.css"
 
-const inter = Inter({ subsets: ['latin'], display: 'swap' })
+const sans = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+})
+
+const serif = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  display: "swap",
+  variable: "--font-serif",
+})
+
+const indexable = isSiteIndexable()
 
 export const metadata: Metadata = {
-  title: 'ASKNIGHTS - Premier NFT Art Platform | Curation, Tokenization & Awards',
-  description: 'Discover, create, and celebrate digital art on ASKNIGHTS. Premier NFT art curation, tokenization, and awards platform. Join the digital art revolution.',
-  keywords: 'NFT, digital art, art curation, tokenization, blockchain art, crypto art, digital artists, NFT platform, art awards, digital collectibles',
-  authors: [{ name: 'ASKNIGHTS Team' }],
-  creator: 'ASKNIGHTS',
-  publisher: 'ASKNIGHTS',
+  metadataBase: new URL(site.url),
+  title: {
+    default: site.name,
+    template: `%s · ${site.name}`,
+  },
+  description: site.description,
+  applicationName: site.name,
+  keywords: [
+    "ASKNIGHTS",
+    "NFT art",
+    "curation",
+    "phygitals",
+    "Metaverse",
+    "digital art",
+    "ASKNIGHTS Magazine",
+  ],
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
+  publisher: site.name,
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://asknights.com'),
-  alternates: {
-    canonical: '/',
-  },
   openGraph: {
-    title: 'ASKNIGHTS - Premier NFT Art Platform',
-    description: 'Discover, create, and celebrate digital art on ASKNIGHTS. Premier NFT art curation, tokenization, and awards platform.',
-    url: 'https://asknights.com',
-    siteName: 'ASKNIGHTS',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'ASKNIGHTS - Premier NFT Art Platform',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
+    type: "website",
+    locale: site.ogLocale,
+    url: site.url,
+    siteName: site.name,
+    title: site.name,
+    description: site.description,
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'ASKNIGHTS - Premier NFT Art Platform',
-    description: 'Discover, create, and celebrate digital art on ASKNIGHTS. Premier NFT art curation, tokenization, and awards platform.',
-    images: ['/twitter-image.jpg'],
-    creator: '@asknights',
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
+    creator: "@top_NFT_art",
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
-  },
+  robots: indexable
+    ? {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      }
+    : {
+        index: false,
+        follow: false,
+        googleBot: {
+          index: false,
+          follow: false,
+        },
+      },
+  manifest: "/manifest.json",
+}
+
+export const viewport: Viewport = {
+  themeColor: "#121211",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: site.name,
+  url: site.url,
+  foundingDate: String(site.founded),
+  description: site.description,
+  sameAs: site.socials.map((social) => social.href),
 }
 
 export default function RootLayout({
@@ -67,15 +105,23 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-      </head>
-      <body className={inter.className}>{children}</body>
+    <html lang={site.locale} className={`${sans.variable} ${serif.variable}`}>
+      <body className="min-h-screen bg-background font-sans text-foreground antialiased">
+        <a
+          href="#content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"
+        >
+          Skip to content
+        </a>
+        <SiteHeader />
+        <main id="content">{children}</main>
+        <SiteFooter />
+        <Analytics />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </body>
     </html>
   )
 }
