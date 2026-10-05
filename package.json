@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "check:showcase": "node scripts/check-showcase.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -53,6 +54,7 @@
     "react-hook-form": "latest",
     "react-resizable-panels": "latest",
     "recharts": "latest",
+    "server-only": "^0.0.1",
     "sonner": "latest",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",

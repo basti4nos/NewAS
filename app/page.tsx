@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Palette, Coins, Star, Zap, Users, Trophy, Sparkles, Eye, Play } from "lucide-react"
-import Image from "next/image"
+import { Palette, Users, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { HeroSection } from "@/components/hero-section"
 import { ServicesSection } from "@/components/services-section"
 import { AnimationFallback } from "@/components/animation-fallback"
+import { HomeTeaser } from "@/components/showcase/home-teaser"
+import { getHomeTeaser } from "@/lib/showcase"
 
-export default function Component() {
+export default async function Component() {
+  const teaser = await getHomeTeaser()
   return (
     <>
       <AnimationFallback />
@@ -41,62 +41,7 @@ export default function Component() {
         {/* Services Section */}
         <ServicesSection />
 
-        {/* Featured Gallery */}
-        <section className="px-6 py-32 bg-gradient-to-r from-purple-900/20 via-black to-pink-900/20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.1)_0%,transparent_50%)]" />
-
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="text-center mb-20">
-              <h2 className="text-6xl md:text-7xl font-black mb-8 tracking-tighter">
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-text-shimmer">
-                  Featured Collection
-                </span>
-              </h2>
-              <p className="text-2xl text-gray-300 font-light tracking-wide">
-                Discover extraordinary digital artworks from our curated collection
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-10">
-              {[1, 2, 3, 4, 5, 6].map((item, index) => (
-                <Card
-                  key={item}
-                  className="bg-gray-900/60 border-gray-700/50 hover:border-purple-500/60 transition-all duration-500 group overflow-hidden backdrop-blur-sm transform hover:scale-110 hover:-translate-y-6 shadow-2xl hover:shadow-purple-500/25"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="aspect-square relative overflow-hidden">
-                    <Image
-                      src={`/placeholder.svg?height=400&width=400`}
-                      alt={`Featured Art ${item}`}
-                      width={400}
-                      height={400}
-                      className="object-cover group-hover:scale-125 transition-transform duration-700 filter group-hover:brightness-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                    <div className="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                      <h4 className="text-white font-bold text-xl mb-2 tracking-wide">Digital Dreams #{item}</h4>
-                      <p className="text-gray-200 text-lg font-light">By Artist Name</p>
-                    </div>
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-
-            <div className="text-center mt-16">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 border-0 text-xl px-12 py-6 font-bold tracking-wide transform hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-purple-500/50 group"
-              >
-                View Full Gallery
-                <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
-              </Button>
-            </div>
-          </div>
-        </section>
+        <HomeTeaser teaser={teaser} />
 
         {/* Stats Section */}
         <section className="px-6 py-32 relative">
@@ -175,6 +120,12 @@ export default function Component() {
                 </span>
               </div>
               <div className="flex space-x-8 text-gray-400">
+                <Link
+                  href="/showcase"
+                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
+                >
+                  Showcase
+                </Link>
                 <Link
                   href="#"
                   className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
