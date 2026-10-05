@@ -31,6 +31,13 @@ body {
     min-height: 44px;
     min-width: 44px;
   }
+
+  /* Month calendar cells stay on a 7-column grid. */
+  .showcase-calendar a,
+  .showcase-calendar button {
+    min-height: 0;
+    min-width: 0;
+  }
   
   /* Improve scrolling performance */
   * {

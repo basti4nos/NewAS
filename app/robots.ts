@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/*'],
+      disallow: ['/api/*', '/showcase'],
     },
     sitemap: 'https://asknights.com/sitemap.xml',
   }

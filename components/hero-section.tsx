@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Play, Star } from "lucide-react"
@@ -34,12 +35,15 @@ export function HeroSection() {
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up-slow">
           <Button
+            asChild
             size="lg"
             className="bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 border-0 text-xl px-12 py-6 font-bold tracking-wide transform hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-purple-500/50 group"
           >
-            <Play className="mr-3 w-6 h-6 group-hover:animate-pulse" />
-            Explore Gallery
-            <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+            <Link href="/showcase">
+              <Play className="mr-3 w-6 h-6 group-hover:animate-pulse" />
+              Explore Gallery
+              <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+            </Link>
           </Button>
           <Button
             size="lg"
