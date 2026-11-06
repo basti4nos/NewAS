@@ -86,7 +86,12 @@ This project is ready for deployment on [Vercel](https://vercel.com/) or any pla
 
 ### Environment Variables
 
-No environment variables are required for the default setup. If you add features that require secrets or API keys, document them in a `.env.local` file.
+See `.env.example`. The marketing site runs without secrets. For the private showcase draft:
+
+- `SHOWCASE_PREVIEW=1` unlocks the full schedule locally
+- `SHOWCASE_PREVIEW_SECRET` unlocks unreleased works when the URL includes `?preview=<secret>`
+
+Bare `?preview=1` no longer unlocks anything unless that secret is literally `1`.
 
 ## Project Structure
 
@@ -128,7 +133,6 @@ No environment variables are required for the default setup. If you add features
 
 - **Next.js 15**: Latest framework with App Router
 - **Static Generation**: Pre-rendered pages for better SEO
-- **Image Optimization**: Automatic image optimization with next/image
 - **Font Optimization**: Inter font with next/font to prevent FOUT
 - **Code Splitting**: Automatic code splitting for faster loads
 - **Mobile Optimizations**: Touch-friendly interactions and reduced motion support

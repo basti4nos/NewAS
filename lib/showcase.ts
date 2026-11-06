@@ -94,10 +94,22 @@ function scheduled(): ScheduledWork[] {
   return data.works.filter((work): work is ScheduledWork => Boolean(work.releaseDate && work.month))
 }
 
+/** Preview unlock token used in ?preview=… links. Empty means preview is off. */
+export function previewToken(): string {
+  if (process.env.SHOWCASE_PREVIEW === "1") return "1"
+  return process.env.SHOWCASE_PREVIEW_SECRET?.trim() || ""
+}
+
+/**
+ * Unlock unreleased works only when SHOWCASE_PREVIEW=1 (dev) or when the
+ * query value matches SHOWCASE_PREVIEW_SECRET. Bare ?preview=1 is ignored
+ * unless that secret is literally "1".
+ */
 export function isPreview(value: string | string[] | undefined): boolean {
-  if (process.env.SHOWCASE_PREVIEW === "1") return true
+  const token = previewToken()
+  if (!token) return false
   const flag = Array.isArray(value) ? value[0] : value
-  return flag === "1" || flag === "true"
+  return Boolean(flag) && flag === token
 }
 
 export async function showcaseToday(): Promise<string> {
@@ -112,14 +124,17 @@ export function listMonths(): MonthSummary[] {
     list.push(work)
     groups.set(work.month, list)
   }
-  return [...groups.entries()].map(([id, works]) => ({
-    id,
-    label: monthTitle(id),
-    count: works.length,
-    opens: works[0].releaseDate,
-    closes: works[works.length - 1].releaseDate,
-    opensLabel: formatWeekdayLong(works[0].releaseDate),
-  }))
+  return [...groups.entries()].map(([id, works]) => {
+    const dates = works.map((work) => work.releaseDate).sort()
+    return {
+      id,
+      label: monthTitle(id),
+      count: works.length,
+      opens: dates[0],
+      closes: dates[dates.length - 1],
+      opensLabel: formatWeekdayLong(dates[0]),
+    }
+  })
 }
 
 export function resolveMonthId(today: string): string {
@@ -152,7 +167,7 @@ function toPublic(work: ScheduledWork, preview: boolean): PublicWork {
     releaseLabel: formatWeekdayLong(work.releaseDate),
     exhibitionUrl: work.exhibitionUrl ?? null,
     marketplaceUrl: data.marketplaceUrl,
-    href: withPreview(`/showcase/${work.month}/${work.slug}`, preview),
+    href: withPreview(`/showcase/${work.month}/${work.slug}`, preview, previewToken()),
   }
 }
 
@@ -197,7 +212,7 @@ export async function getViewer(monthId: string, slug: string, preview: boolean)
     prev: prev ? neighbor(prev, preview) : null,
     next: next ? neighbor(next, preview) : null,
     sibling: sibling ? neighbor(sibling, preview) : null,
-    monthHref: withPreview(`/showcase/${monthId}`, preview),
+    monthHref: withPreview(`/showcase/${monthId}`, preview, previewToken()),
     monthLabel: monthTitle(monthId),
     preview,
     live: work.releaseDate <= today,
@@ -206,7 +221,7 @@ export async function getViewer(monthId: string, slug: string, preview: boolean)
 
 function neighbor(work: ScheduledWork, preview: boolean): Neighbor {
   return {
-    href: withPreview(`/showcase/${work.month}/${work.slug}`, preview),
+    href: withPreview(`/showcase/${work.month}/${work.slug}`, preview, previewToken()),
     title: work.title,
     artist: work.artist,
   }

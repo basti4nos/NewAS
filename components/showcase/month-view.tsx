@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/showcase/site-header"
 import { WorkBadges } from "@/components/showcase/work-badges"
 import { WorkLinks } from "@/components/showcase/work-links"
 import type { CalendarDay, MonthPageModel, PublicWork } from "@/lib/showcase"
+import { previewToken } from "@/lib/showcase"
 import { formatLong, withPreview } from "@/lib/showcase-shared"
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
@@ -13,7 +14,7 @@ export function MonthView({ model }: { model: MonthPageModel }) {
   const { summary, hero, days, released, preview, months } = model
   return (
     <>
-      <SiteHeader />
+      <SiteHeader preview={preview} previewToken={previewToken()} />
       {preview ? (
         <p
           data-testid="preview-banner"
@@ -36,7 +37,7 @@ export function MonthView({ model }: { model: MonthPageModel }) {
             {months.map((month) => (
               <Link
                 key={month.id}
-                href={withPreview(`/showcase/${month.id}`, preview)}
+                href={withPreview(`/showcase/${month.id}`, preview, previewToken())}
                 aria-current={month.id === summary.id ? "page" : undefined}
                 className={`rounded-full border px-3 py-1.5 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-300 ${
                   month.id === summary.id
@@ -59,12 +60,15 @@ export function MonthView({ model }: { model: MonthPageModel }) {
             </h2>
             <p className="text-xs text-white/45">Dashed days are still to come</p>
           </div>
-          <div data-testid="month-calendar" className="showcase-calendar" role="grid" aria-label={`${summary.label} release calendar`}>
-            <div role="row" className="grid grid-cols-7 gap-1 sm:gap-2">
+          <div
+            data-testid="month-calendar"
+            className="showcase-calendar"
+            aria-label={`${summary.label} release calendar`}
+          >
+            <div className="grid grid-cols-7 gap-1 sm:gap-2" aria-hidden>
               {WEEKDAYS.map((day) => (
                 <div
                   key={day}
-                  role="columnheader"
                   className="pb-2 text-center text-[10px] uppercase tracking-[0.16em] text-white/40 sm:text-xs"
                 >
                   {day}
@@ -72,12 +76,8 @@ export function MonthView({ model }: { model: MonthPageModel }) {
               ))}
             </div>
             <div className="grid grid-cols-7 gap-1 sm:gap-2">
-              {chunk(days, 7).map((week, weekIndex) => (
-                <div key={weekIndex} role="row" className="contents">
-                  {week.map((day, dayIndex) => (
-                    <DayCell key={day.iso ?? `pad-${weekIndex}-${dayIndex}`} day={day} />
-                  ))}
-                </div>
+              {days.map((day, dayIndex) => (
+                <DayCell key={day.iso ?? `pad-${dayIndex}`} day={day} />
               ))}
             </div>
           </div>
@@ -185,7 +185,7 @@ function HeroWork({ work, solo }: { work: PublicWork; solo: boolean }) {
 
 function DayCell({ day }: { day: CalendarDay }) {
   if (!day.inMonth || day.dayNumber == null) {
-    return <div role="gridcell" aria-hidden className="aspect-square" />
+    return <div aria-hidden className="aspect-square" />
   }
 
   const label = day.iso ? formatLong(day.iso) : ""
@@ -194,7 +194,6 @@ function DayCell({ day }: { day: CalendarDay }) {
   if (day.items.length === 0) {
     return (
       <div
-        role="gridcell"
         aria-label={`${label}, no work scheduled`}
         aria-current={day.isToday ? "date" : undefined}
         className={`flex aspect-square items-center justify-center rounded-md text-xs text-white/50 ${todayClass}`}
@@ -206,7 +205,6 @@ function DayCell({ day }: { day: CalendarDay }) {
 
   return (
     <div
-      role="gridcell"
       aria-label={day.items.every((item) => item.state === "locked") ? `${label}, not yet released` : undefined}
       aria-current={day.isToday ? "date" : undefined}
       className={`aspect-square overflow-hidden rounded-md ${todayClass}`}
@@ -246,8 +244,3 @@ function DayCell({ day }: { day: CalendarDay }) {
   )
 }
 
-function chunk<T>(items: T[], size: number): T[][] {
-  const rows: T[][] = []
-  for (let index = 0; index < items.length; index += size) rows.push(items.slice(index, index + size))
-  return rows
-}

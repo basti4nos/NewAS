@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Play, Star } from "lucide-react"
+import { ArrowRight, Mail, Play, Star } from "lucide-react"
 
 export function HeroSection() {
   return (
@@ -41,16 +41,20 @@ export function HeroSection() {
           >
             <Link href="/showcase">
               <Play className="mr-3 w-6 h-6 group-hover:animate-pulse" />
-              Explore Gallery
+              Preview showcase
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
             </Link>
           </Button>
           <Button
+            asChild
             size="lg"
             variant="outline"
             className="border-2 border-purple-500/50 text-purple-200 hover:bg-purple-500/20 text-xl px-12 py-6 font-bold tracking-wide backdrop-blur-sm transform hover:scale-110 transition-all duration-500 hover:border-purple-400"
           >
-            Submit Art
+            <a href="mailto:contact@asknights.org?subject=Artist%20submission">
+              <Mail className="mr-3 w-6 h-6" />
+              Submit Art
+            </a>
           </Button>
         </div>
       </div>
@@ -64,4 +68,4 @@ export function HeroSection() {
       </div>
     </section>
   )
-} 
+}

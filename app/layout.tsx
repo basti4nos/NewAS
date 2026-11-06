@@ -1,8 +1,10 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
+
+const siteUrl = 'https://asknights.org'
 
 export const metadata: Metadata = {
   title: 'ASKNIGHTS - Premier NFT Art Platform | Curation, Tokenization & Awards',
@@ -16,18 +18,18 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://asknights.com'),
+  metadataBase: new URL(siteUrl),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'ASKNIGHTS - Premier NFT Art Platform',
     description: 'Discover, create, and celebrate digital art on ASKNIGHTS. Premier NFT art curation, tokenization, and awards platform.',
-    url: 'https://asknights.com',
+    url: siteUrl,
     siteName: 'ASKNIGHTS',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/opengraph-image',
         width: 1200,
         height: 630,
         alt: 'ASKNIGHTS - Premier NFT Art Platform',
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ASKNIGHTS - Premier NFT Art Platform',
     description: 'Discover, create, and celebrate digital art on ASKNIGHTS. Premier NFT art curation, tokenization, and awards platform.',
-    images: ['/twitter-image.jpg'],
+    images: ['/opengraph-image'],
     creator: '@asknights',
   },
   robots: {
@@ -54,11 +56,18 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
+  manifest: '/manifest.json',
+  appleWebApp: {
+    title: 'ASKNIGHTS',
+    statusBarStyle: 'black-translucent',
   },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#000000',
 }
 
 export default function RootLayout({
@@ -68,14 +77,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-      </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-sm focus:text-black"
+        >
+          Skip to content
+        </a>
+        {children}
+      </body>
     </html>
   )
 }

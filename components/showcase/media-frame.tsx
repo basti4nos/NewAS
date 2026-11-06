@@ -76,7 +76,8 @@ export function MediaFrame({ url, mime, kind, alt, fit = "contain", priority = f
         title={alt}
         src={src}
         className="h-full w-full border-0 bg-black"
-        sandbox="allow-scripts allow-same-origin allow-pointer-lock"
+        // Scripts without same-origin: avoids sandbox escape if HTML works go live.
+        sandbox="allow-scripts allow-pointer-lock"
         referrerPolicy="no-referrer"
         loading={priority ? "eager" : "lazy"}
       />
@@ -84,6 +85,24 @@ export function MediaFrame({ url, mime, kind, alt, fit = "contain", priority = f
   }
 
   if (kind === "video") {
+    const isQuickTime = mime.toLowerCase().includes("quicktime") || /\.mov(?:$|\?)/i.test(src)
+    if (isQuickTime) {
+      return (
+        <div className="flex h-full w-full flex-col items-center justify-center gap-4 px-6 text-center">
+          <p className="max-w-sm text-sm text-white/70">
+            This work is a QuickTime (.mov) file. Chromium and Firefox often cannot play it inline.
+          </p>
+          <a
+            href={src}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-white/30 px-4 py-2 text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-300"
+          >
+            Open video
+          </a>
+        </div>
+      )
+    }
     return (
       <video
         key={src}

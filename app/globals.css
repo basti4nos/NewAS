@@ -26,8 +26,12 @@ body {
     animation-duration: 8s;
   }
   
-  /* Optimize touch targets */
-  button, a, [role="button"] {
+  /* Touch targets for primary controls only — not every text link. */
+  button,
+  [role="button"],
+  a.inline-flex,
+  a.rounded-md,
+  a.rounded-full {
     min-height: 44px;
     min-width: 44px;
   }

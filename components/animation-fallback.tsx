@@ -7,7 +7,7 @@ export function AnimationFallback() {
     // Fallback to ensure animated elements become visible
     const timer = setTimeout(() => {
       const animatedElements = document.querySelectorAll(
-        '.animate-text-reveal-delayed, .animate-fade-in-up-delayed, .animate-fade-in-up-slow'
+        '.animate-fade-in-up, .animate-text-reveal, .animate-text-reveal-delayed, .animate-fade-in-up-delayed, .animate-fade-in-up-slow'
       )
       
       animatedElements.forEach((element) => {

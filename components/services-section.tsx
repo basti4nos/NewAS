@@ -57,7 +57,7 @@ const colorClasses = {
 
 export function ServicesSection() {
   return (
-    <section className="px-6 py-32 relative bg-gradient-to-br from-purple-900/20 via-black to-pink-900/20" id="curation">
+    <section className="px-6 py-32 relative bg-gradient-to-br from-purple-900/20 via-black to-pink-900/20" id="services">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.15)_0%,transparent_70%)]" />
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20">
