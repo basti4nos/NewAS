@@ -1,11 +1,16 @@
 import type { ReactNode } from "react"
 import Link from "next/link"
 import { DraftMarker } from "@/components/showcase/draft-marker"
+import { withPreview } from "@/lib/showcase-shared"
 
 export function SiteHeader({
   trailing,
+  preview = false,
+  previewToken = "1",
 }: {
   trailing?: ReactNode
+  preview?: boolean
+  previewToken?: string
 }) {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-black/85 backdrop-blur-md">
@@ -24,7 +29,7 @@ export function SiteHeader({
             ASKNIGHTS
           </Link>
           <Link
-            href="/showcase"
+            href={withPreview("/showcase", preview, previewToken)}
             className="text-sm text-white/70 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pink-300"
           >
             Showcase

@@ -28,15 +28,12 @@ export function WorkLinks({
           <span className="sr-only"> for {title}, opens in a new tab</span>
         </span>
       </a>
-      <a
-        href={marketplaceUrl}
-        rel="nofollow noreferrer"
-        className="rounded-xl border border-dashed border-white/15 px-4 py-3 hover:border-white/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-300"
-      >
+      <div className="rounded-xl border border-dashed border-white/15 px-4 py-3">
         <span className="block text-[11px] uppercase tracking-[0.16em] text-white/45">Marketplace 2.0</span>
         <span className="mt-1 block text-sm text-white">nft.asknights.org</span>
-        <span className="text-xs text-white/45">Coming soon</span>
-      </a>
+        <span className="text-xs text-white/45">Coming soon — not live yet</span>
+        <span className="sr-only">Marketplace URL reserved: {marketplaceUrl}</span>
+      </div>
       <div className="rounded-xl border border-dashed border-white/15 px-4 py-3">
         <span className="block text-[11px] uppercase tracking-[0.16em] text-white/45">Metaverse exhibition</span>
         {exhibitionUrl ? (

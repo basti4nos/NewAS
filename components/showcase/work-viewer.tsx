@@ -59,6 +59,12 @@ export function WorkViewer({ model }: { model: ViewerModel }) {
     if (dx > 0 && prev) router.push(prev.href)
   }
 
+  useEffect(() => {
+    if (!copied) return
+    const timer = window.setTimeout(() => setCopied(false), 2000)
+    return () => window.clearTimeout(timer)
+  }, [copied])
+
   async function copyLink() {
     const path = work.href.split("?")[0]
     try {
@@ -136,6 +142,7 @@ export function WorkViewer({ model }: { model: ViewerModel }) {
             <button
               type="button"
               onClick={copyLink}
+              aria-live="polite"
               className="rounded-full border border-white/20 px-4 py-2 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-300"
             >
               {copied ? "Link copied" : live ? "Copy link" : "Copy public link"}

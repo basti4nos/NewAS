@@ -19,7 +19,6 @@ const MONTHS = [
 const IPFS_GATEWAYS = [
   "https://ipfs.filebase.io/ipfs/",
   "https://gateway.pinata.cloud/ipfs/",
-  "https://cloudflare-ipfs.com/ipfs/",
   "https://ipfs.io/ipfs/",
   "https://dweb.link/ipfs/",
 ]
@@ -122,9 +121,10 @@ export function monthEnd(id: string): string {
   return `${id}-${String(last).padStart(2, "0")}`
 }
 
-export function withPreview(path: string, preview: boolean): string {
-  if (!preview) return path
-  return path.includes("?") ? `${path}&preview=1` : `${path}?preview=1`
+export function withPreview(path: string, preview: boolean, token = "1"): string {
+  if (!preview || !token) return path
+  const query = `preview=${encodeURIComponent(token)}`
+  return path.includes("?") ? `${path}&${query}` : `${path}?${query}`
 }
 
 function unique(values: string[]): string[] {

@@ -1,11 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  // Showcase media often comes from IPFS/Arweave with gateway failover via <img>,
+  // so the Image Optimization API stays off for those paths.
   images: {
     unoptimized: true,
   },
