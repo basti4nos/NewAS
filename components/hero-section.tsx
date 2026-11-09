@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Mail, Play, Star } from "lucide-react"
+import { contactEmail } from "@/lib/site"
 
 export function HeroSection() {
   return (
@@ -51,7 +52,7 @@ export function HeroSection() {
             variant="outline"
             className="border-2 border-purple-500/50 text-purple-200 hover:bg-purple-500/20 text-xl px-12 py-6 font-bold tracking-wide backdrop-blur-sm transform hover:scale-110 transition-all duration-500 hover:border-purple-400"
           >
-            <a href="mailto:contact@asknights.org?subject=Artist%20submission">
+            <a href={`mailto:${contactEmail}?subject=Artist%20submission`}>
               <Mail className="mr-3 w-6 h-6" />
               Submit Art
             </a>
