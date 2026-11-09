@@ -1,11 +1,15 @@
 import { Button } from "@/components/ui/button"
-import { Mail, Sparkles, Users } from "lucide-react"
+import { Mail, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { HeroSection } from "@/components/hero-section"
 import { ServicesSection } from "@/components/services-section"
 import { AnimationFallback } from "@/components/animation-fallback"
 import { HomeTeaser } from "@/components/showcase/home-teaser"
 import { getHomeTeaser } from "@/lib/showcase"
+import { contactEmail, social } from "@/lib/site"
+
+/** Home teaser follows UTC day; refresh hourly so “today” stays current. */
+export const revalidate = 3600
 
 export default async function Component() {
   const teaser = await getHomeTeaser()
@@ -67,7 +71,7 @@ export default async function Component() {
                   size="lg"
                   className="bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 border-0 text-xl px-12 py-6 font-bold tracking-wide transform hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-purple-500/50 group"
                 >
-                  <a href="mailto:contact@asknights.org?subject=Artist%20submission">
+                  <a href={`mailto:${contactEmail}?subject=Artist%20submission`}>
                     <Mail className="mr-3 w-6 h-6" />
                     Submit Your Art
                   </a>
@@ -78,14 +82,7 @@ export default async function Component() {
                   variant="outline"
                   className="border-2 border-purple-500/50 text-purple-200 hover:bg-purple-500/20 text-xl px-12 py-6 font-bold tracking-wide backdrop-blur-sm transform hover:scale-110 transition-all duration-500 hover:border-purple-400 group"
                 >
-                  <a
-                    href="https://asknights.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Users className="mr-3 w-6 h-6 group-hover:animate-bounce" />
-                    Visit ASKNIGHTS
-                  </a>
+                  <Link href="/contact">Contact the team</Link>
                 </Button>
               </div>
             </div>
@@ -111,19 +108,37 @@ export default async function Component() {
                 >
                   Showcase
                 </Link>
+                <Link
+                  href="/about"
+                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
+                >
+                  About
+                </Link>
+                <Link
+                  href="/contact"
+                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
+                >
+                  Contact
+                </Link>
+                <Link
+                  href="/privacy"
+                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
+                >
+                  Privacy
+                </Link>
+                <Link
+                  href="/terms"
+                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
+                >
+                  Terms
+                </Link>
                 <a
-                  href="https://asknights.org/"
+                  href={social.x}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
                 >
-                  About
-                </a>
-                <a
-                  href="mailto:contact@asknights.org"
-                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
-                >
-                  Contact
+                  X
                 </a>
               </div>
             </div>

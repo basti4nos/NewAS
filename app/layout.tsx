@@ -1,10 +1,9 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { siteUrl } from '@/lib/site'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
-
-const siteUrl = 'https://asknights.org'
 
 export const metadata: Metadata = {
   title: 'ASKNIGHTS - Premier NFT Art Platform | Curation, Tokenization & Awards',
@@ -43,7 +42,7 @@ export const metadata: Metadata = {
     title: 'ASKNIGHTS - Premier NFT Art Platform',
     description: 'Discover, create, and celebrate digital art on ASKNIGHTS. Premier NFT art curation, tokenization, and awards platform.',
     images: ['/opengraph-image'],
-    creator: '@asknights',
+    creator: '@top_NFT_art',
   },
   robots: {
     index: true,

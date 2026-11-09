@@ -306,8 +306,12 @@ export async function getOgSubject(
   return { status: "open", work: toPublic(work, false) }
 }
 
+/**
+ * Marketing-home teaser. Uses calendar UTC date without `connection()`, so the
+ * home page can stay on ISR instead of becoming fully dynamic.
+ */
 export async function getHomeTeaser(): Promise<HomeTeaser> {
-  const today = await showcaseToday()
+  const today = todayISO()
   const monthId = resolveMonthId(today)
   const summary = listMonths().find((month) => month.id === monthId)
   if (!summary) {

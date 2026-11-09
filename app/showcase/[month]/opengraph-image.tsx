@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og"
 import { listMonths } from "@/lib/showcase"
 
-export const dynamic = "force-dynamic"
 export const alt = "ASKNIGHTS Showcase, private draft"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"

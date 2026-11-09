@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og"
 import { getOgSubject } from "@/lib/showcase"
-import { mediaKind } from "@/lib/showcase-shared"
+import { mediaCandidates, mediaKind } from "@/lib/showcase-shared"
 
 export const dynamic = "force-dynamic"
 export const alt = "ASKNIGHTS Showcase"
@@ -101,17 +101,20 @@ export default async function WorkImage({ params }: { params: Promise<{ month: s
 async function loadStill(url: string, mime: string): Promise<string | null> {
   const kind = mediaKind(mime)
   if (kind !== "image") return null
-  try {
-    const controller = new AbortController()
-    const timer = setTimeout(() => controller.abort(), 4000)
-    const response = await fetch(url, { signal: controller.signal })
-    clearTimeout(timer)
-    if (!response.ok) return null
-    const bytes = await response.arrayBuffer()
-    if (bytes.byteLength > 1_200_000) return null
-    const type = mime.toLowerCase().startsWith("image/") ? mime : "image/jpeg"
-    return `data:${type};base64,${Buffer.from(bytes).toString("base64")}`
-  } catch {
-    return null
+  const type = mime.toLowerCase().startsWith("image/") ? mime : "image/jpeg"
+  for (const candidate of mediaCandidates(url)) {
+    try {
+      const controller = new AbortController()
+      const timer = setTimeout(() => controller.abort(), 4000)
+      const response = await fetch(candidate, { signal: controller.signal })
+      clearTimeout(timer)
+      if (!response.ok) continue
+      const bytes = await response.arrayBuffer()
+      if (bytes.byteLength > 1_200_000) continue
+      return `data:${type};base64,${Buffer.from(bytes).toString("base64")}`
+    } catch {
+      // Try the next IPFS/Arweave gateway.
+    }
   }
+  return null
 }
