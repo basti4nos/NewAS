@@ -26,11 +26,21 @@ ASKNIGHTS focuses on selective NFT art curation, responsible tokenisation, recog
 - **Font**: Inter (via `next/font`)
 - **Deployment**: Vercel
 
+## Branch policy
+
+We work carefully because this site can affect real people.
+
+- **`dev`** — private working line. All experiments, drafts, and untested changes go here first.
+- **`main`** — public line. Promote from `dev` only after things work, after testing, and when we are confident it will not harm others.
+
+Do not push unfinished work straight to `main`. Trial and error belongs on `dev`.
+
 ## Local Development
 
 ```sh
 git clone https://github.com/basti4nos/NewAS.git
 cd NewAS
+git checkout dev
 pnpm install
 pnpm dev
 ```
@@ -41,6 +51,7 @@ App: [http://localhost:3000](http://localhost:3000)
 pnpm build
 pnpm start
 ```
+
 
 ## Environment Variables
 
