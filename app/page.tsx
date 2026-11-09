@@ -1,9 +1,6 @@
-import { Button } from "@/components/ui/button"
-import { Mail, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { HeroSection } from "@/components/hero-section"
 import { ServicesSection } from "@/components/services-section"
-import { AnimationFallback } from "@/components/animation-fallback"
 import { HomeTeaser } from "@/components/showcase/home-teaser"
 import { getHomeTeaser } from "@/lib/showcase"
 import { contactEmail, social } from "@/lib/site"
@@ -15,144 +12,67 @@ export default async function Component() {
   const teaser = await getHomeTeaser()
   const year = new Date().getUTCFullYear()
   return (
-    <>
-      <AnimationFallback />
-      <div className="min-h-screen bg-black text-white overflow-hidden relative">
-        {/* Animated Background Elements */}
-        <div className="fixed inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse" />
-          <div
-            className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-bounce"
-            style={{ animationDuration: "3s" }}
-          />
-          <div
-            className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-full blur-3xl animate-spin"
-            style={{ animationDuration: "20s" }}
-          />
-        </div>
+    <div className="site-bg grain min-h-screen text-[var(--ink)]">
+      <main id="main">
+        <HeroSection />
+        <ServicesSection />
+        <HomeTeaser teaser={teaser} />
 
-        {/* Floating Geometric Shapes */}
-        <div className="fixed inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-purple-400 rotate-45 animate-float" />
-          <div className="absolute top-3/4 right-1/4 w-6 h-6 bg-pink-400 rounded-full animate-float-delayed" />
-          <div className="absolute top-1/2 right-1/3 w-3 h-8 bg-cyan-400 animate-float-slow" />
-          <div className="absolute bottom-1/4 left-1/3 w-5 h-5 bg-yellow-400 rotate-12 animate-float" />
-        </div>
-
-        <main id="main">
-          <HeroSection />
-          <ServicesSection />
-          <HomeTeaser teaser={teaser} />
-
-          {/* CTA Section */}
-          <section className="px-6 py-32 bg-gradient-to-r from-purple-900/30 via-black to-pink-900/30 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.15)_0%,transparent_70%)]" />
-
-            <div className="max-w-5xl mx-auto text-center relative z-10">
-              <h2 className="text-6xl md:text-7xl font-black mb-8 tracking-tighter leading-none">
-                <span className="bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent animate-text-shimmer">
-                  Ready to Elevate
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                  Your Art?
-                </span>
-              </h2>
-              <p className="text-2xl text-gray-200 mb-12 max-w-3xl mx-auto font-light tracking-wide leading-relaxed">
-                Join the premier platform for NFT art curation, tokenization, and recognition.
-                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
-                  Start your journey
-                </span>{" "}
-                in the digital art revolution today.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 border-0 text-xl px-12 py-6 font-bold tracking-wide transform hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-purple-500/50 group"
-                >
-                  <a href={`mailto:${contactEmail}?subject=Artist%20submission`}>
-                    <Mail className="mr-3 w-6 h-6" />
-                    Submit Your Art
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-purple-500/50 text-purple-200 hover:bg-purple-500/20 text-xl px-12 py-6 font-bold tracking-wide backdrop-blur-sm transform hover:scale-110 transition-all duration-500 hover:border-purple-400 group"
-                >
-                  <Link href="/contact">Contact the team</Link>
-                </Button>
-              </div>
-            </div>
-          </section>
-        </main>
-
-        {/* Footer */}
-        <footer className="px-6 py-16 border-t border-gray-800/50 backdrop-blur-sm bg-black/20">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="flex items-center space-x-3 mb-6 md:mb-0 group">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-purple-500/25">
-                  <Sparkles className="w-6 h-6 text-white animate-pulse" />
-                </div>
-                <span className="text-3xl font-black bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent tracking-wider">
-                  ASKNIGHTS
-                </span>
-              </div>
-              <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-gray-400">
-                <Link
-                  href="/showcase"
-                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
-                >
-                  Showcase
-                </Link>
-                <Link
-                  href="/about"
-                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
-                >
-                  About
-                </Link>
-                <Link
-                  href="/contact"
-                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
-                >
-                  Contact
-                </Link>
-                <Link
-                  href="/privacy"
-                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
-                >
-                  Privacy
-                </Link>
-                <Link
-                  href="/terms"
-                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
-                >
-                  Terms
-                </Link>
-                <a
-                  href={social.x}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-all duration-300 hover:scale-110 font-medium tracking-wide text-lg"
-                >
-                  X
-                </a>
-              </div>
-            </div>
-            <div className="mt-12 pt-8 border-t border-gray-800/50 text-center text-gray-400">
-              <p className="text-lg font-light tracking-wide">
-                &copy; {year} ASKNIGHTS. All rights reserved.{" "}
-                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
-                  Elevating digital art to new heights.
-                </span>
-              </p>
+        <section className="border-t border-[var(--line)] px-6 py-24 md:py-28">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="font-display text-3xl tracking-tight md:text-4xl">Work with us</h2>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--ink-muted)] md:text-lg">
+              Artist submissions and partnerships are welcome by email. We read carefully and reply
+              when we can take something forward.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={`mailto:${contactEmail}?subject=Artist%20submission`}
+                className="btn inline-flex items-center justify-center bg-[var(--ink)] px-5 py-3 text-sm font-medium text-[var(--bg)] transition hover:bg-[var(--brand)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand)]"
+              >
+                Submit your art
+              </a>
+              <Link
+                href="/contact"
+                className="btn inline-flex items-center justify-center border border-[var(--ink)] px-5 py-3 text-sm font-medium transition hover:bg-[var(--bg-elevated)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand)]"
+              >
+                Contact
+              </Link>
             </div>
           </div>
-        </footer>
-      </div>
-    </>
+        </section>
+      </main>
+
+      <footer className="border-t border-[var(--line)] px-6 py-12">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="font-display text-2xl tracking-[0.12em]">ASKNIGHTS</p>
+            <p className="mt-2 text-sm text-[var(--ink-muted)]">
+              &copy; {year} ASKNIGHTS. Elevating digital art with care.
+            </p>
+          </div>
+          <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--ink-muted)]">
+            <Link href="/showcase" className="hover:text-[var(--ink)]">
+              Showcase
+            </Link>
+            <Link href="/about" className="hover:text-[var(--ink)]">
+              About
+            </Link>
+            <Link href="/contact" className="hover:text-[var(--ink)]">
+              Contact
+            </Link>
+            <Link href="/privacy" className="hover:text-[var(--ink)]">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-[var(--ink)]">
+              Terms
+            </Link>
+            <a href={social.x} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--ink)]">
+              X
+            </a>
+          </nav>
+        </div>
+      </footer>
+    </div>
   )
 }

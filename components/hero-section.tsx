@@ -1,71 +1,45 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Mail, Play, Star } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import { GlitchText } from "@/components/glitch-text"
 import { contactEmail } from "@/lib/site"
 
 export function HeroSection() {
   return (
-    <section className="relative px-6 py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-black to-pink-900/30" />
+    <section className="relative isolate min-h-[100svh] overflow-hidden text-[var(--bg)]">
+      <div className="glitch-field" aria-hidden>
+        <div className="glitch-field__noise" />
+        <div className="glitch-field__tear" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,transparent_0%,rgba(12,13,16,0.35)_70%)]" />
+      </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto text-center">
-        <Badge className="mb-8 bg-gradient-to-r from-purple-600/30 to-pink-600/30 border-purple-500/50 text-purple-200 px-6 py-2 text-lg font-medium backdrop-blur-sm animate-fade-in-up">
-          <Star className="w-5 h-5 mr-3 animate-spin" style={{ animationDuration: "3s" }} />
-          Top NFT Art Platform
-        </Badge>
-
-        <div className="space-y-6 mb-12">
-          <h1 className="text-7xl md:text-9xl font-black leading-none tracking-tighter">
-            <span className="block bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent animate-text-reveal">
-              Elevate
-            </span>
-            <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-text-reveal-delayed transform hover:scale-105 transition-transform duration-500">
-              Digital Art
-            </span>
-          </h1>
-        </div>
-
-        <p className="text-2xl md:text-3xl text-gray-200 mb-16 max-w-4xl mx-auto leading-relaxed font-light tracking-wide animate-fade-in-up-delayed">
-          Premier NFT art curation, tokenization, and awards platform.
-          <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
-            Discover, create, and celebrate
-          </span>{" "}
-          the future of digital artistry.
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-6 pb-16 pt-28 md:pb-24 md:pt-32">
+        <p className="animate-rise font-display text-5xl tracking-[0.08em] text-white md:text-7xl lg:text-8xl">
+          <GlitchText text="ASKNIGHTS" onDark className="font-display" />
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up-slow">
-          <Button
-            asChild
-            size="lg"
-            className="bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 border-0 text-xl px-12 py-6 font-bold tracking-wide transform hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-purple-500/50 group"
-          >
-            <Link href="/showcase">
-              <Play className="mr-3 w-6 h-6 group-hover:animate-pulse" />
-              Preview showcase
-              <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
-            </Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="border-2 border-purple-500/50 text-purple-200 hover:bg-purple-500/20 text-xl px-12 py-6 font-bold tracking-wide backdrop-blur-sm transform hover:scale-110 transition-all duration-500 hover:border-purple-400"
-          >
-            <a href={`mailto:${contactEmail}?subject=Artist%20submission`}>
-              <Mail className="mr-3 w-6 h-6" />
-              Submit Art
-            </a>
-          </Button>
-        </div>
-      </div>
+        <h1 className="animate-rise-delay mt-8 max-w-3xl font-display text-3xl leading-tight text-white md:text-5xl">
+          Curated digital art, held with care.
+        </h1>
 
-      {/* Floating Art Pieces */}
-      <div className="absolute top-20 right-20 w-32 h-32 opacity-20 animate-float">
-        <div className="w-full h-full bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl transform rotate-12" />
-      </div>
-      <div className="absolute bottom-32 left-20 w-24 h-24 opacity-20 animate-float-delayed">
-        <div className="w-full h-full bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full" />
+        <p className="animate-rise-late mt-5 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
+          Selective curation, responsible tokenisation, and a private monthly showcase in progress.
+        </p>
+
+        <div className="animate-rise-late mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <Link
+            href="/showcase"
+            className="btn inline-flex items-center justify-center gap-2 bg-[var(--bg)] px-6 py-3 text-sm font-medium tracking-wide text-[var(--ink)] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            Preview showcase
+            <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
+          <a
+            href={`mailto:${contactEmail}?subject=Artist%20submission`}
+            className="btn inline-flex items-center justify-center border border-white/35 px-6 py-3 text-sm font-medium tracking-wide text-white transition hover:border-white hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            Submit art
+          </a>
+        </div>
       </div>
     </section>
   )

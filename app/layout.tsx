@@ -1,17 +1,30 @@
-import type { Metadata, Viewport } from 'next'
-import './globals.css'
-import { Inter } from 'next/font/google'
-import { siteUrl } from '@/lib/site'
+import type { Metadata, Viewport } from "next"
+import { DM_Sans, Instrument_Serif } from "next/font/google"
+import "./globals.css"
+import { siteUrl } from "@/lib/site"
 
-const inter = Inter({ subsets: ['latin'], display: 'swap' })
+const sans = DM_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+})
+
+const display = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-display",
+})
 
 export const metadata: Metadata = {
-  title: 'ASKNIGHTS - Premier NFT Art Platform | Curation, Tokenization & Awards',
-  description: 'Discover, create, and celebrate digital art on ASKNIGHTS. Premier NFT art curation, tokenization, and awards platform. Join the digital art revolution.',
-  keywords: 'NFT, digital art, art curation, tokenization, blockchain art, crypto art, digital artists, NFT platform, art awards, digital collectibles',
-  authors: [{ name: 'ASKNIGHTS Team' }],
-  creator: 'ASKNIGHTS',
-  publisher: 'ASKNIGHTS',
+  title: "ASKNIGHTS — Curated digital art",
+  description:
+    "ASKNIGHTS curates, tokenises, and preserves high-quality NFT art. Selective programme with a private monthly showcase.",
+  keywords:
+    "NFT, digital art, art curation, tokenization, blockchain art, crypto art, digital artists, NFT platform",
+  authors: [{ name: "ASKNIGHTS Team" }],
+  creator: "ASKNIGHTS",
+  publisher: "ASKNIGHTS",
   formatDetection: {
     email: false,
     address: false,
@@ -19,30 +32,32 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
-    title: 'ASKNIGHTS - Premier NFT Art Platform',
-    description: 'Discover, create, and celebrate digital art on ASKNIGHTS. Premier NFT art curation, tokenization, and awards platform.',
+    title: "ASKNIGHTS — Curated digital art",
+    description:
+      "ASKNIGHTS curates, tokenises, and preserves high-quality NFT art. Selective programme with a private monthly showcase.",
     url: siteUrl,
-    siteName: 'ASKNIGHTS',
+    siteName: "ASKNIGHTS",
     images: [
       {
-        url: '/opengraph-image',
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: 'ASKNIGHTS - Premier NFT Art Platform',
+        alt: "ASKNIGHTS",
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_GB",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'ASKNIGHTS - Premier NFT Art Platform',
-    description: 'Discover, create, and celebrate digital art on ASKNIGHTS. Premier NFT art curation, tokenization, and awards platform.',
-    images: ['/opengraph-image'],
-    creator: '@top_NFT_art',
+    card: "summary_large_image",
+    title: "ASKNIGHTS — Curated digital art",
+    description:
+      "ASKNIGHTS curates, tokenises, and preserves high-quality NFT art. Selective programme with a private monthly showcase.",
+    images: ["/opengraph-image"],
+    creator: "@top_NFT_art",
   },
   robots: {
     index: true,
@@ -50,23 +65,23 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  manifest: '/manifest.json',
+  manifest: "/manifest.json",
   appleWebApp: {
-    title: 'ASKNIGHTS',
-    statusBarStyle: 'black-translucent',
+    title: "ASKNIGHTS",
+    statusBarStyle: "default",
   },
 }
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#000000',
+  themeColor: "#f2efe8",
 }
 
 export default function RootLayout({
@@ -75,11 +90,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en-GB">
+      <body className={`${sans.variable} ${display.variable} font-sans-body antialiased`}>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-sm focus:text-black"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-sm focus:bg-[var(--ink)] focus:px-3 focus:py-2 focus:text-sm focus:text-[var(--bg)]"
         >
           Skip to content
         </a>

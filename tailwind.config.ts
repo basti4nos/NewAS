@@ -30,11 +30,11 @@ const config: Config = {
   				foreground: 'hsl(var(--secondary-foreground))'
   			},
   			muted: {
-  				DEFAULT: 'hsl(var(--muted))',
+  				DEFAULT: 'hsl(var(--ink-muted))',
   				foreground: 'hsl(var(--muted-foreground))'
   			},
   			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
+  				DEFAULT: 'hsl(var(--brand))',
   				foreground: 'hsl(var(--accent-foreground))'
   			},
   			destructive: {
