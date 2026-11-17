@@ -6,7 +6,7 @@ const fail = (message) => errors.push(message)
 
 const works = data.works
 const reserve = data.reserve
-if (works.length !== 106) fail(`expected 106 scheduled works, got ${works.length}`)
+if (works.length !== 108) fail(`expected 108 scheduled works, got ${works.length}`)
 if (reserve.length !== 36) fail(`expected 36 reserve works, got ${reserve.length}`)
 if (data.timezone !== "UTC") fail("timezone must be UTC")
 if (data.marketplaceUrl !== "https://nft.asknights.org") fail("marketplace placeholder changed")
@@ -50,10 +50,10 @@ for (const work of works) {
 }
 
 const expected = [
-  ["2026-11", 22, "2026-11-05"],
-  ["2026-12", 36, "2026-12-01"],
-  ["2027-01", 34, "2027-01-01"],
-  ["2027-02", 14, "2027-02-01"],
+  ["2026-11", 16, "2026-11-05"],
+  ["2026-12", 29, "2026-12-03"],
+  ["2027-01", 33, "2027-01-01"],
+  ["2027-02", 30, "2027-02-01"],
 ]
 if ([...byMonth.keys()].join() !== expected.map(([id]) => id).join()) {
   fail(`months ${[...byMonth.keys()].join()} != ${expected.map(([id]) => id).join()}`)
@@ -80,8 +80,8 @@ if (phygital.join("|") !== expectedPhygital.join("|")) {
 
 if (works[0].releaseDate !== "2026-11-05") fail("first release is not 5 Nov 2026")
 if (works.some((work) => work.releaseDate < "2026-11-05")) fail("a work is scheduled before launch")
-if (works.some((work) => work.releaseDate >= "2026-11-12" && work.releaseDate <= "2026-11-18")) {
-  fail("a work is scheduled in the 12–18 Nov gap")
+if (works.some((work) => work.releaseDate >= "2026-11-18" && work.releaseDate <= "2026-12-02")) {
+  fail("a work is scheduled in the 18 Nov–2 Dec gap")
 }
 
 const carried = [
@@ -94,6 +94,13 @@ const carried = [
   ["cps2-firebird-s-wing-42", "2026-11-10"],
   ["the-leos-115", "2026-11-11"],
   ["souvenir-study-26", "2026-11-11"],
+  ["a-smile-is-more-than-a-thought", "2026-11-12"],
+  ["srt-21-glitching-torus", "2026-11-13"],
+  ["highway-to-hell", "2026-11-14"],
+  ["untitled-sketch", "2026-11-15"],
+  ["yellow-lashes-and-no-hint-of-care", "2026-11-15"],
+  ["leaving-with-grace", "2026-11-16"],
+  ["streetfronts-in-watercolor", "2026-11-17"],
 ]
 for (const [slug, date] of carried) {
   const work = works.find((item) => item.slug === slug)

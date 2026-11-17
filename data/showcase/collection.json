@@ -1,5 +1,5 @@
 {
-  "notes": "Curator schedule for the ASKNIGHTS Showcase. Edit releaseDate (YYYY-MM-DD) to move a work; each date is the UTC day it becomes visible. Works already released from 5 to 11 November 2026 stay on those dates. Nothing new is scheduled from 12 to 18 November 2026. The frozen v2 schedule then runs from 19 November 2026 through 14 February 2027. Days may list two works. Reserve entries have no releaseDate and are not shown. ref is the shortlist row id, not a rank — do not display it. Do not add prices or wallet addresses. exhibitionUrl may be added per work when a Metaverse exhibition link exists. marketplaceUrl is a placeholder for nft.asknights.org, not a live integration. Daily order is not a ranking.",
+  "notes": "Curator schedule for the ASKNIGHTS Showcase. Edit releaseDate (YYYY-MM-DD) to move a work; each date is the UTC day it becomes visible. Works already released from 5 to 17 November 2026 stay on those dates. Nothing new is scheduled from 18 November through 2 December 2026. The frozen v2 schedule then runs from 3 December 2026 through 28 February 2027. Days may list two works. Reserve entries have no releaseDate and are not shown. ref is the shortlist row id, not a rank — do not display it. Do not add prices or wallet addresses. exhibitionUrl may be added per work when a Metaverse exhibition link exists. marketplaceUrl is a placeholder for nft.asknights.org, not a live integration. Daily order is not a ranking.",
   "timezone": "UTC",
   "marketplaceUrl": "https://nft.asknights.org",
   "works": [
@@ -140,111 +140,6 @@
       "month": "2026-11"
     },
     {
-      "ref": "1",
-      "slug": "friend-tech-095",
-      "title": "friend.tech.095",
-      "artist": "sgt_slaughtermelon (sgtslaughtermelon.eth)",
-      "curatorNote": "A dark pyramid filled with clouds and nebulae.",
-      "chain": "Base",
-      "provenanceUrl": "https://opensea.io/item/base/0x50B342Cb67EEa869f0512b2DF9F7Ef761C05d1e1/95",
-      "mediaUrl": "https://arweave.net/eRHGn4mmWqOxMqoqE7EKhPwaUidK7ytCD2nU2WpnhtA",
-      "mediaMime": "image/png",
-      "contract": "0x50B342Cb67EEa869f0512b2DF9F7Ef761C05d1e1",
-      "tokenId": "95",
-      "releaseDate": "2026-11-19",
-      "month": "2026-11"
-    },
-    {
-      "ref": "2",
-      "slug": "repetition-and-noise-763",
-      "title": "Repetition and Noise #763",
-      "artist": "Jeres (jeres.eth)",
-      "curatorNote": "Rows of brown and black brush-like marks repeat, drift and fray into noise on white; a live generative work shown here by its preview.",
-      "chain": "Base",
-      "provenanceUrl": "https://opensea.io/item/base/0x8718d8f356FCDcbe6BD359A157A63dB898dC3f53/763",
-      "mediaUrl": "https://highlight-creator-assets.highlight.xyz/main/base-dir/4fe9d708-7821-437f-9b70-b152d60b904d/previews/763.png",
-      "mediaMime": "image/png",
-      "contract": "0x8718d8f356FCDcbe6BD359A157A63dB898dC3f53",
-      "tokenId": "763",
-      "releaseDate": "2026-11-20",
-      "month": "2026-11"
-    },
-    {
-      "ref": "3",
-      "slug": "mazemania-1778",
-      "title": "Mazemania #1778",
-      "artist": "Fernando Jerez (fernandojerez.eth)",
-      "curatorNote": "A tight, looping maze of pink and violet paths inside a green border; a live generative work shown here by its preview.",
-      "chain": "Base",
-      "provenanceUrl": "https://opensea.io/item/base/0x886FF4dD2Bea127bD8a006DAd0a2DC277D03dF4c/1778",
-      "mediaUrl": "https://highlight-creator-assets.highlight.xyz/main/base-dir/8504e2e3-5e96-4009-99cb-b9d159f3c343/previews/1778.png",
-      "mediaMime": "image/png",
-      "contract": "0x886FF4dD2Bea127bD8a006DAd0a2DC277D03dF4c",
-      "tokenId": "1778",
-      "releaseDate": "2026-11-21",
-      "month": "2026-11"
-    },
-    {
-      "ref": "4",
-      "slug": "56-space-oddity",
-      "title": "#56 (Space Oddity)",
-      "artist": "vectorz3r0 (vectorz3r0.eth)",
-      "curatorNote": "An inverted black-and-white planet ringed by op-art bands, from a generative star atlas; a live work shown here by its preview.",
-      "chain": "Base",
-      "provenanceUrl": "https://opensea.io/item/base/0x35bDdd0E29152cfad95D831e0F2c650bbc9d40F7/56",
-      "mediaUrl": "https://highlight-creator-assets.highlight.xyz/main/base-dir/d88ac096-3829-4b16-82d9-f6d6c5434279/previews/56.png",
-      "mediaMime": "image/png",
-      "contract": "0x35bDdd0E29152cfad95D831e0F2c650bbc9d40F7",
-      "tokenId": "56",
-      "releaseDate": "2026-11-22",
-      "month": "2026-11"
-    },
-    {
-      "ref": "5",
-      "slug": "406-a-dance-with-history",
-      "title": "#406 (A Dance with History)",
-      "artist": "Newyellow (newyellow.eth)",
-      "curatorNote": "A crowd of ordinary figures drawn in loose green, blue and yellow line, layered as if dancing across a page; a live work shown here by its preview.",
-      "chain": "Base",
-      "provenanceUrl": "https://opensea.io/item/base/0xEB4740647A4C493077E10ba32707056BB3a72007/406",
-      "mediaUrl": "https://highlight-creator-assets.highlight.xyz/main/base-dir/ee07996f-5e91-4577-94d0-d820a639b3b5/previews/406.png",
-      "mediaMime": "image/png",
-      "contract": "0xEB4740647A4C493077E10ba32707056BB3a72007",
-      "tokenId": "406",
-      "releaseDate": "2026-11-23",
-      "month": "2026-11"
-    },
-    {
-      "ref": "6",
-      "slug": "kaleidoscope-70",
-      "title": "Kaleidoscope #70",
-      "artist": "Reza Hasni (named in the contract name)",
-      "curatorNote": "A symmetrical neon mandala of hands, eyes and radiating bands in pink, cyan and green; a live generative work shown here by its preview.",
-      "chain": "Base",
-      "provenanceUrl": "https://opensea.io/item/base/0x4c3a1A918b5f6d3007Db58CE2e82366c3548c5e5/70",
-      "mediaUrl": "https://highlight-creator-assets.highlight.xyz/main/base-dir/4c750dec-6a13-4b9d-8ac6-a3efc9327d0b/previews/70.png",
-      "mediaMime": "image/png",
-      "contract": "0x4c3a1A918b5f6d3007Db58CE2e82366c3548c5e5",
-      "tokenId": "70",
-      "releaseDate": "2026-11-25",
-      "month": "2026-11"
-    },
-    {
-      "ref": "74",
-      "slug": "redcard",
-      "title": "REDCARD",
-      "artist": "RAX",
-      "curatorNote": "A symmetrical helmeted figure in white, gold and grey against a smeared red field.",
-      "chain": "Solana",
-      "provenanceUrl": "https://www.tensor.trade/item/2JZyRSne98qCVTZYQxzvu5B8abj8Wi4DcCWXSGxq73ye",
-      "mediaUrl": "https://arweave.net/JxgBv_Nwxdl5PuLTOYG7eCju0tflDOiNQqwCwQMJ-YY?ext=png",
-      "mediaMime": "image/png",
-      "contract": "EiKk8tfhc94s75FkMwNaNYahrxruYRmiDACiNt3M3hTK",
-      "tokenId": "2JZyRSne98qCVTZYQxzvu5B8abj8Wi4DcCWXSGxq73ye",
-      "releaseDate": "2026-11-25",
-      "month": "2026-11"
-    },
-    {
       "ref": "25",
       "slug": "a-smile-is-more-than-a-thought",
       "title": "A Smile is More Than a Thought",
@@ -256,7 +151,7 @@
       "mediaMime": "image/jpeg",
       "contract": "0xb6dAe651468E9593E4581705a09c10A76AC1e0c8",
       "tokenId": "5868",
-      "releaseDate": "2026-11-26",
+      "releaseDate": "2026-11-12",
       "month": "2026-11"
     },
     {
@@ -271,37 +166,37 @@
       "mediaMime": "image/jpeg",
       "contract": "KT1LjmAdYQCLBjwv4S2oFkEzyHVkomAf5MrW",
       "tokenId": "32627",
-      "releaseDate": "2026-11-27",
+      "releaseDate": "2026-11-13",
+      "month": "2026-11"
+    },
+    {
+      "ref": "77",
+      "slug": "highway-to-hell",
+      "title": "Highway to Hell",
+      "artist": "andrewmason (DRiP handle)",
+      "curatorNote": "An aerial photograph of a desert road slicing through rust-coloured scrub in Southern California.",
+      "chain": "Solana",
+      "provenanceUrl": "https://www.tensor.trade/item/BfRXAoDn9FnLpML7jnDKHJ2K483HjbDpprTdPdrXbi16",
+      "mediaUrl": "https://arweave.net/0XNvEPZBfp5eVTZaY-uQN8iFfjR__V1R7fyFd0WHEFo?ext=jpg",
+      "mediaMime": "image/jpeg",
+      "contract": "AMSNskm2RZqPXCZ6P2z6JLyHWMQF6pQ8RA8Q6x42Xufq",
+      "tokenId": "BfRXAoDn9FnLpML7jnDKHJ2K483HjbDpprTdPdrXbi16",
+      "releaseDate": "2026-11-14",
       "month": "2026-11"
     },
     {
       "ref": "7",
-      "slug": "peaks-2437",
-      "title": "Peaks #2437",
-      "artist": "Arrotu (artname.eth)",
-      "curatorNote": "A soft coral field with a pale torn border, like a mountain glimpsed through paper; one image in a larger series.",
+      "slug": "untitled-sketch",
+      "title": "untitled sketch",
+      "artist": "tony wallstrom",
+      "curatorNote": "Loose, gestural marks in blue, red and ochre scattered across a pale 8000-pixel ground.",
       "chain": "Base",
-      "provenanceUrl": "https://opensea.io/item/base/0x33B92f2a3AD516876E8902151E82De7F05D97D2B/786",
-      "mediaUrl": "https://arweave.net/1NjzzLeXU2La6pa5k0sFr2V02h8Wxhzz10YjmRquxiY",
-      "mediaMime": "image/webp",
-      "contract": "0x33B92f2a3AD516876E8902151E82De7F05D97D2B",
-      "tokenId": "786",
-      "releaseDate": "2026-11-28",
-      "month": "2026-11"
-    },
-    {
-      "ref": "8",
-      "slug": "the-chromie-pixels-63",
-      "title": "The Chromie Pixels #63",
-      "artist": "linali (linali.eth)",
-      "curatorNote": "A deep blue grid of chromatic pixels melting and re-forming; a live generative work shown here by its preview.",
-      "chain": "Base",
-      "provenanceUrl": "https://opensea.io/item/base/0x0aE73D18c647d59C3146055998C70DA62eA43A80/63",
-      "mediaUrl": "https://highlight-creator-assets.highlight.xyz/main/base-dir/45edad30-a5e3-4fb6-82a2-2e567f680434/previews/63.png",
-      "mediaMime": "image/png",
-      "contract": "0x0aE73D18c647d59C3146055998C70DA62eA43A80",
-      "tokenId": "63",
-      "releaseDate": "2026-11-29",
+      "provenanceUrl": "https://opensea.io/item/base/0xd4fbcfcf5f0dd2e6fef266b2de4ba42b5afaec45/20351",
+      "mediaUrl": "https://ipfs.filebase.io/ipfs/QmWnVeqk1oEDYneiiLzfkUqzyXKwCp8YK49DjzEsykhpvi",
+      "mediaMime": "image/jpeg",
+      "contract": "0xD4FBcfcf5f0dd2E6FEf266B2De4Ba42B5afaEC45",
+      "tokenId": "20351",
+      "releaseDate": "2026-11-15",
       "month": "2026-11"
     },
     {
@@ -316,7 +211,8 @@
       "mediaMime": "image/jpeg",
       "contract": "0x2963bA471e265e5F51cAfaFca78310FE87F8E6D1",
       "tokenId": "22520",
-      "releaseDate": "2026-11-29",
+      "ai": "assisted",
+      "releaseDate": "2026-11-15",
       "month": "2026-11"
     },
     {
@@ -331,7 +227,7 @@
       "mediaMime": "image/webp",
       "contract": "KT1S6LxAUcCC5PqeYAqvQRPVtVkSJhYP51k6",
       "tokenId": "81",
-      "releaseDate": "2026-11-30",
+      "releaseDate": "2026-11-16",
       "month": "2026-11"
     },
     {
@@ -346,7 +242,142 @@
       "mediaMime": "image/jpeg",
       "contract": "EXGNKjHJczZvRbiyK1QGxp7yZooeSaFq72rJF1hDvwoS",
       "tokenId": "8P97QkK1U874FQp7sLLUDeY8RFHszFAoAmZA1Vui8oMC",
-      "releaseDate": "2026-12-01",
+      "releaseDate": "2026-11-17",
+      "month": "2026-11"
+    },
+    {
+      "ref": "1",
+      "slug": "friend-tech-095",
+      "title": "friend.tech.095",
+      "artist": "sgt_slaughtermelon (sgtslaughtermelon.eth)",
+      "curatorNote": "A dark pyramid filled with clouds and nebulae.",
+      "chain": "Base",
+      "provenanceUrl": "https://opensea.io/item/base/0x50B342Cb67EEa869f0512b2DF9F7Ef761C05d1e1/95",
+      "mediaUrl": "https://arweave.net/eRHGn4mmWqOxMqoqE7EKhPwaUidK7ytCD2nU2WpnhtA",
+      "mediaMime": "image/png",
+      "contract": "0x50B342Cb67EEa869f0512b2DF9F7Ef761C05d1e1",
+      "tokenId": "95",
+      "releaseDate": "2026-12-03",
+      "month": "2026-12"
+    },
+    {
+      "ref": "2",
+      "slug": "repetition-and-noise-763",
+      "title": "Repetition and Noise #763",
+      "artist": "Jeres (jeres.eth)",
+      "curatorNote": "Rows of brown and black brush-like marks repeat, drift and fray into noise on white; a live generative work shown here by its preview.",
+      "chain": "Base",
+      "provenanceUrl": "https://opensea.io/item/base/0x8718d8f356FCDcbe6BD359A157A63dB898dC3f53/763",
+      "mediaUrl": "https://highlight-creator-assets.highlight.xyz/main/base-dir/4fe9d708-7821-437f-9b70-b152d60b904d/previews/763.png",
+      "mediaMime": "image/png",
+      "contract": "0x8718d8f356FCDcbe6BD359A157A63dB898dC3f53",
+      "tokenId": "763",
+      "releaseDate": "2026-12-04",
+      "month": "2026-12"
+    },
+    {
+      "ref": "3",
+      "slug": "mazemania-1778",
+      "title": "Mazemania #1778",
+      "artist": "Fernando Jerez (fernandojerez.eth)",
+      "curatorNote": "A tight, looping maze of pink and violet paths inside a green border; a live generative work shown here by its preview.",
+      "chain": "Base",
+      "provenanceUrl": "https://opensea.io/item/base/0x886FF4dD2Bea127bD8a006DAd0a2DC277D03dF4c/1778",
+      "mediaUrl": "https://highlight-creator-assets.highlight.xyz/main/base-dir/8504e2e3-5e96-4009-99cb-b9d159f3c343/previews/1778.png",
+      "mediaMime": "image/png",
+      "contract": "0x886FF4dD2Bea127bD8a006DAd0a2DC277D03dF4c",
+      "tokenId": "1778",
+      "releaseDate": "2026-12-05",
+      "month": "2026-12"
+    },
+    {
+      "ref": "4",
+      "slug": "56-space-oddity",
+      "title": "#56 (Space Oddity)",
+      "artist": "vectorz3r0 (vectorz3r0.eth)",
+      "curatorNote": "An inverted black-and-white planet ringed by op-art bands, from a generative star atlas; a live work shown here by its preview.",
+      "chain": "Base",
+      "provenanceUrl": "https://opensea.io/item/base/0x35bDdd0E29152cfad95D831e0F2c650bbc9d40F7/56",
+      "mediaUrl": "https://highlight-creator-assets.highlight.xyz/main/base-dir/d88ac096-3829-4b16-82d9-f6d6c5434279/previews/56.png",
+      "mediaMime": "image/png",
+      "contract": "0x35bDdd0E29152cfad95D831e0F2c650bbc9d40F7",
+      "tokenId": "56",
+      "releaseDate": "2026-12-06",
+      "month": "2026-12"
+    },
+    {
+      "ref": "5",
+      "slug": "406-a-dance-with-history",
+      "title": "#406 (A Dance with History)",
+      "artist": "Newyellow (newyellow.eth)",
+      "curatorNote": "A crowd of ordinary figures drawn in loose green, blue and yellow line, layered as if dancing across a page; a live work shown here by its preview.",
+      "chain": "Base",
+      "provenanceUrl": "https://opensea.io/item/base/0xEB4740647A4C493077E10ba32707056BB3a72007/406",
+      "mediaUrl": "https://highlight-creator-assets.highlight.xyz/main/base-dir/ee07996f-5e91-4577-94d0-d820a639b3b5/previews/406.png",
+      "mediaMime": "image/png",
+      "contract": "0xEB4740647A4C493077E10ba32707056BB3a72007",
+      "tokenId": "406",
+      "releaseDate": "2026-12-07",
+      "month": "2026-12"
+    },
+    {
+      "ref": "6",
+      "slug": "kaleidoscope-70",
+      "title": "Kaleidoscope #70",
+      "artist": "Reza Hasni (named in the contract name)",
+      "curatorNote": "A symmetrical neon mandala of hands, eyes and radiating bands in pink, cyan and green; a live generative work shown here by its preview.",
+      "chain": "Base",
+      "provenanceUrl": "https://opensea.io/item/base/0x4c3a1A918b5f6d3007Db58CE2e82366c3548c5e5/70",
+      "mediaUrl": "https://highlight-creator-assets.highlight.xyz/main/base-dir/4c750dec-6a13-4b9d-8ac6-a3efc9327d0b/previews/70.png",
+      "mediaMime": "image/png",
+      "contract": "0x4c3a1A918b5f6d3007Db58CE2e82366c3548c5e5",
+      "tokenId": "70",
+      "releaseDate": "2026-12-09",
+      "month": "2026-12"
+    },
+    {
+      "ref": "74",
+      "slug": "redcard",
+      "title": "REDCARD",
+      "artist": "RAX",
+      "curatorNote": "A symmetrical helmeted figure in white, gold and grey against a smeared red field.",
+      "chain": "Solana",
+      "provenanceUrl": "https://www.tensor.trade/item/2JZyRSne98qCVTZYQxzvu5B8abj8Wi4DcCWXSGxq73ye",
+      "mediaUrl": "https://arweave.net/JxgBv_Nwxdl5PuLTOYG7eCju0tflDOiNQqwCwQMJ-YY?ext=png",
+      "mediaMime": "image/png",
+      "contract": "EiKk8tfhc94s75FkMwNaNYahrxruYRmiDACiNt3M3hTK",
+      "tokenId": "2JZyRSne98qCVTZYQxzvu5B8abj8Wi4DcCWXSGxq73ye",
+      "releaseDate": "2026-12-09",
+      "month": "2026-12"
+    },
+    {
+      "ref": "7",
+      "slug": "peaks-2437",
+      "title": "Peaks #2437",
+      "artist": "Arrotu (artname.eth)",
+      "curatorNote": "A soft coral field with a pale torn border, like a mountain glimpsed through paper; one image in a larger series.",
+      "chain": "Base",
+      "provenanceUrl": "https://opensea.io/item/base/0x33B92f2a3AD516876E8902151E82De7F05D97D2B/786",
+      "mediaUrl": "https://arweave.net/1NjzzLeXU2La6pa5k0sFr2V02h8Wxhzz10YjmRquxiY",
+      "mediaMime": "image/webp",
+      "contract": "0x33B92f2a3AD516876E8902151E82De7F05D97D2B",
+      "tokenId": "786",
+      "releaseDate": "2026-12-12",
+      "month": "2026-12"
+    },
+    {
+      "ref": "8",
+      "slug": "the-chromie-pixels-63",
+      "title": "The Chromie Pixels #63",
+      "artist": "linali (linali.eth)",
+      "curatorNote": "A deep blue grid of chromatic pixels melting and re-forming; a live generative work shown here by its preview.",
+      "chain": "Base",
+      "provenanceUrl": "https://opensea.io/item/base/0x0aE73D18c647d59C3146055998C70DA62eA43A80/63",
+      "mediaUrl": "https://highlight-creator-assets.highlight.xyz/main/base-dir/45edad30-a5e3-4fb6-82a2-2e567f680434/previews/63.png",
+      "mediaMime": "image/png",
+      "contract": "0x0aE73D18c647d59C3146055998C70DA62eA43A80",
+      "tokenId": "63",
+      "releaseDate": "2026-12-13",
       "month": "2026-12"
     },
     {
@@ -361,7 +392,7 @@
       "mediaMime": "image/png",
       "contract": "0x5e4b388CA1cDE94940423A499d42053002d3dF16",
       "tokenId": "16",
-      "releaseDate": "2026-12-02",
+      "releaseDate": "2026-12-16",
       "month": "2026-12"
     },
     {
@@ -376,7 +407,7 @@
       "mediaMime": "image/png",
       "contract": "0xb59b35f2891226Cb576c964e85FCf5415972401d",
       "tokenId": "454",
-      "releaseDate": "2026-12-02",
+      "releaseDate": "2026-12-16",
       "month": "2026-12"
     },
     {
@@ -391,7 +422,7 @@
       "mediaMime": "image/png",
       "contract": "KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton",
       "tokenId": "30025",
-      "releaseDate": "2026-12-03",
+      "releaseDate": "2026-12-17",
       "month": "2026-12"
     },
     {
@@ -406,7 +437,7 @@
       "mediaMime": "image/png",
       "contract": "0x6fAad877E9A570db7b44a34462a253E9FF463ba3",
       "tokenId": "556",
-      "releaseDate": "2026-12-04",
+      "releaseDate": "2026-12-18",
       "month": "2026-12"
     },
     {
@@ -421,7 +452,7 @@
       "mediaMime": "image/png",
       "contract": "0x8f9f6D03D0D8FB946B3ED6895095a3E207E1Aef2",
       "tokenId": "207",
-      "releaseDate": "2026-12-05",
+      "releaseDate": "2026-12-19",
       "month": "2026-12"
     },
     {
@@ -436,7 +467,7 @@
       "mediaMime": "image/png",
       "contract": "0x72edaee96ea82ee88ca941472399c5e31a0a721e",
       "tokenId": "5",
-      "releaseDate": "2026-12-05",
+      "releaseDate": "2026-12-19",
       "month": "2026-12"
     },
     {
@@ -451,7 +482,7 @@
       "mediaMime": "image/png",
       "contract": "KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton",
       "tokenId": "865634",
-      "releaseDate": "2026-12-06",
+      "releaseDate": "2026-12-20",
       "month": "2026-12"
     },
     {
@@ -466,7 +497,7 @@
       "mediaMime": "image/jpeg",
       "contract": "0x1F4a327921Ab9035b572ddae13996B608711D6aC",
       "tokenId": "1577",
-      "releaseDate": "2026-12-07",
+      "releaseDate": "2026-12-21",
       "month": "2026-12"
     },
     {
@@ -481,7 +512,7 @@
       "mediaMime": "image/png",
       "contract": "0xc1383E977ea063Eb801C509d40724205036678E1",
       "tokenId": "17",
-      "releaseDate": "2026-12-08",
+      "releaseDate": "2026-12-22",
       "month": "2026-12"
     },
     {
@@ -496,7 +527,7 @@
       "mediaMime": "image/png",
       "contract": "0xF91c5b71e629FC233500caA66453e86B69C9DaB1",
       "tokenId": "2463",
-      "releaseDate": "2026-12-09",
+      "releaseDate": "2026-12-23",
       "month": "2026-12"
     },
     {
@@ -511,7 +542,7 @@
       "mediaMime": "image/jpeg",
       "contract": "KT1P5KnAfM7WcdXXQmdNDb5JBKiuz82sUS2d",
       "tokenId": "0",
-      "releaseDate": "2026-12-09",
+      "releaseDate": "2026-12-23",
       "month": "2026-12"
     },
     {
@@ -526,7 +557,7 @@
       "mediaMime": "text/html",
       "contract": "KT1KEa8z6vWXDJrVqtMrAeDVzsvxat3kHaCE",
       "tokenId": "111340",
-      "releaseDate": "2026-12-10",
+      "releaseDate": "2026-12-24",
       "month": "2026-12"
     },
     {
@@ -541,7 +572,7 @@
       "mediaMime": "image/gif",
       "contract": "KT1SzwgxqKPX38XgSX5d8FCmvhfAnQwGSMg2",
       "tokenId": "182",
-      "releaseDate": "2026-12-11",
+      "releaseDate": "2026-12-25",
       "month": "2026-12"
     },
     {
@@ -556,7 +587,7 @@
       "mediaMime": "image/png",
       "contract": "KT1U6EHmNxJTkvaWJ4ThczG4FSDaHC21ssvi",
       "tokenId": "1352025",
-      "releaseDate": "2026-12-12",
+      "releaseDate": "2026-12-26",
       "month": "2026-12"
     },
     {
@@ -571,7 +602,7 @@
       "mediaMime": "video/mp4",
       "contract": "KT1HxUd4QD99wfrzu1XL1vmjnQVWQ5zSPgMc",
       "tokenId": "150",
-      "releaseDate": "2026-12-12",
+      "releaseDate": "2026-12-26",
       "month": "2026-12"
     },
     {
@@ -586,7 +617,7 @@
       "mediaMime": "image/png",
       "contract": "KT1EfsNuqwLAWDd3o4pvfUx1CAh5GMdTrRvr",
       "tokenId": "225785",
-      "releaseDate": "2026-12-13",
+      "releaseDate": "2026-12-27",
       "month": "2026-12"
     },
     {
@@ -601,7 +632,7 @@
       "mediaMime": "image/jpeg",
       "contract": "KT1WxrkBTd4oDeNhjVXGW5ymYHzDqATwjSQS",
       "tokenId": "0",
-      "releaseDate": "2026-12-14",
+      "releaseDate": "2026-12-28",
       "month": "2026-12"
     },
     {
@@ -616,7 +647,7 @@
       "mediaMime": "image/jpeg",
       "contract": "5W5qjGcKCiWzh3GmG9UpAubK9dDz3vCBgLaptyjWiGH1",
       "tokenId": "8hdgHBr9e44cGPfGNfaDMNn1XKUhG1JCdQriQhUh1pgV",
-      "releaseDate": "2026-12-15",
+      "releaseDate": "2026-12-29",
       "month": "2026-12"
     },
     {
@@ -631,7 +662,7 @@
       "mediaMime": "image/webp",
       "contract": "KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton",
       "tokenId": "871885",
-      "releaseDate": "2026-12-16",
+      "releaseDate": "2026-12-30",
       "month": "2026-12"
     },
     {
@@ -646,7 +677,7 @@
       "mediaMime": "image/png",
       "contract": "0x942BC2d3e7a589FE5bd4A5C6eF9727DFd82F5C8a",
       "tokenId": "2954",
-      "releaseDate": "2026-12-17",
+      "releaseDate": "2026-12-31",
       "month": "2026-12"
     },
     {
@@ -661,8 +692,8 @@
       "mediaMime": "image/png",
       "contract": "KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton",
       "tokenId": "601488",
-      "releaseDate": "2026-12-18",
-      "month": "2026-12"
+      "releaseDate": "2027-01-01",
+      "month": "2027-01"
     },
     {
       "ref": "51",
@@ -676,8 +707,8 @@
       "mediaMime": "image/png",
       "contract": "KT1UPGJvDzrURUaKdBte5ivBcHXyELB75WXA",
       "tokenId": "4",
-      "releaseDate": "2026-12-19",
-      "month": "2026-12"
+      "releaseDate": "2027-01-02",
+      "month": "2027-01"
     },
     {
       "ref": "39",
@@ -691,8 +722,8 @@
       "mediaMime": "image/png",
       "contract": "KT1U6EHmNxJTkvaWJ4ThczG4FSDaHC21ssvi",
       "tokenId": "1532430",
-      "releaseDate": "2026-12-20",
-      "month": "2026-12"
+      "releaseDate": "2027-01-03",
+      "month": "2027-01"
     },
     {
       "ref": "75",
@@ -706,8 +737,8 @@
       "mediaMime": "image/png",
       "contract": "AFr8upuKzULqjEuCmmoXb6P1Df6m9FQgR4KoDj8hyLEA",
       "tokenId": "GdetoALGWeyUTdstDcP3PnYHAXo3i8vCBWDahK6oZj4b",
-      "releaseDate": "2026-12-21",
-      "month": "2026-12"
+      "releaseDate": "2027-01-04",
+      "month": "2027-01"
     },
     {
       "ref": "53",
@@ -721,8 +752,8 @@
       "mediaMime": "text/html",
       "contract": "KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton",
       "tokenId": "460804",
-      "releaseDate": "2026-12-22",
-      "month": "2026-12"
+      "releaseDate": "2027-01-05",
+      "month": "2027-01"
     },
     {
       "ref": "26",
@@ -736,8 +767,8 @@
       "mediaMime": "image/jpeg",
       "contract": "0xABB3738f04Dc2Ec20f4AE4462c3d069d02AE045B",
       "tokenId": "29192003",
-      "releaseDate": "2026-12-23",
-      "month": "2026-12"
+      "releaseDate": "2027-01-06",
+      "month": "2027-01"
     },
     {
       "ref": "65",
@@ -751,8 +782,8 @@
       "mediaMime": "image/jpeg",
       "contract": "KT19YVmyCKG2xkA3zhbKuwwQqDPFLJ2RK97Q",
       "tokenId": "3",
-      "releaseDate": "2026-12-24",
-      "month": "2026-12"
+      "releaseDate": "2027-01-07",
+      "month": "2027-01"
     },
     {
       "ref": "42",
@@ -766,8 +797,8 @@
       "mediaMime": "image/png",
       "contract": "KT1U6EHmNxJTkvaWJ4ThczG4FSDaHC21ssvi",
       "tokenId": "1348674",
-      "releaseDate": "2026-12-25",
-      "month": "2026-12"
+      "releaseDate": "2027-01-08",
+      "month": "2027-01"
     },
     {
       "ref": "71",
@@ -781,8 +812,8 @@
       "mediaMime": "image/png",
       "contract": "CFiQHBGsyXLZDHAsUBf6WiPhCzxeFcrKRhFGH8WwG1Re",
       "tokenId": "84xwnnn581o6c9gv9VJ5zcniXXuQU3stya226Uu8HX1t",
-      "releaseDate": "2026-12-25",
-      "month": "2026-12"
+      "releaseDate": "2027-01-08",
+      "month": "2027-01"
     },
     {
       "ref": "77",
@@ -796,8 +827,8 @@
       "mediaMime": "image/png",
       "contract": "3naLpt2eRJyvpopjUgAFPPmmByen826Pa7s7yM5LSznv",
       "tokenId": "aAFpAJxnUqoE13yXSReGrqXGkTwE7wNeebCu8Gwzq9E",
-      "releaseDate": "2026-12-26",
-      "month": "2026-12"
+      "releaseDate": "2027-01-09",
+      "month": "2027-01"
     },
     {
       "ref": "29",
@@ -811,8 +842,8 @@
       "mediaMime": "image/gif",
       "contract": "0x498d007c51A00e411416094292Dc8c60FB184452",
       "tokenId": "1",
-      "releaseDate": "2026-12-27",
-      "month": "2026-12"
+      "releaseDate": "2027-01-10",
+      "month": "2027-01"
     },
     {
       "ref": "45",
@@ -826,8 +857,8 @@
       "mediaMime": "image/jpeg",
       "contract": "KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton",
       "tokenId": "201305",
-      "releaseDate": "2026-12-28",
-      "month": "2026-12"
+      "releaseDate": "2027-01-11",
+      "month": "2027-01"
     },
     {
       "ref": "78",
@@ -841,8 +872,8 @@
       "mediaMime": "image/jpeg",
       "contract": "KT1P5KnAfM7WcdXXQmdNDb5JBKiuz82sUS2d",
       "tokenId": "45",
-      "releaseDate": "2026-12-29",
-      "month": "2026-12"
+      "releaseDate": "2027-01-12",
+      "month": "2027-01"
     },
     {
       "ref": "79",
@@ -856,8 +887,8 @@
       "mediaMime": "image/jpeg",
       "contract": "A43jjJ45SCNMBRDGT1nNYiAPC8WpWpUVuvBQuiqiPBY7",
       "tokenId": "9UG8Ro8LHBQ3DFoYYCTgpazqxvCL1ymd9i4sc51FYBh4",
-      "releaseDate": "2026-12-30",
-      "month": "2026-12"
+      "releaseDate": "2027-01-13",
+      "month": "2027-01"
     },
     {
       "ref": "32",
@@ -871,8 +902,8 @@
       "mediaMime": "image/jpeg",
       "contract": "0x580ad85bb05984754cf8fab941e7100f3e15cdc0",
       "tokenId": "260",
-      "releaseDate": "2026-12-31",
-      "month": "2026-12"
+      "releaseDate": "2027-01-14",
+      "month": "2027-01"
     },
     {
       "ref": "48",
@@ -886,7 +917,7 @@
       "mediaMime": "image/png",
       "contract": "KT1GWkGDmj3tibesgZVFvcP8AFFjViY31eFP",
       "tokenId": "7",
-      "releaseDate": "2027-01-01",
+      "releaseDate": "2027-01-15",
       "month": "2027-01"
     },
     {
@@ -901,7 +932,7 @@
       "mediaMime": "image/png",
       "contract": "2VbnDcLhtprz562EhrYopUYRp6wR4NueJCLcKdZVrLxc",
       "tokenId": "F97FsEEuw5aV1uzG4VEZAKzhChaHDzfioxLPLNYtNmZa",
-      "releaseDate": "2027-01-02",
+      "releaseDate": "2027-01-16",
       "month": "2027-01"
     },
     {
@@ -916,7 +947,7 @@
       "mediaMime": "image/png",
       "contract": "0x87807856AfdB0Aa2Ea7B30231e7AAF20820e4942",
       "tokenId": "98",
-      "releaseDate": "2027-01-03",
+      "releaseDate": "2027-01-17",
       "month": "2027-01"
     },
     {
@@ -931,7 +962,7 @@
       "mediaMime": "image/png",
       "contract": "0xa1de9f93c56c290c48849b1393b09eb616d55dbb",
       "tokenId": "2289",
-      "releaseDate": "2027-01-04",
+      "releaseDate": "2027-01-18",
       "month": "2027-01"
     },
     {
@@ -946,7 +977,7 @@
       "mediaMime": "image/png",
       "contract": "HfpFyoo2JBDhBWgH4PunpAGbu86CWgnk1t6VAC7tanMR",
       "tokenId": "ByxMUujxapkT7gsCC7UTW7JN9QESwsKFdYRM53hv1hao",
-      "releaseDate": "2027-01-05",
+      "releaseDate": "2027-01-19",
       "month": "2027-01"
     },
     {
@@ -961,7 +992,7 @@
       "mediaMime": "image/jpeg",
       "contract": "HmMaH5q8rKw3bnmX6SPJqMf93XyecLwvRKzK4FBLp5wZ",
       "tokenId": "HBejRsyn6nbY1VkidUnWHLNH9tGxyU8agwHNzc7EU4pJ",
-      "releaseDate": "2027-01-05",
+      "releaseDate": "2027-01-19",
       "month": "2027-01"
     },
     {
@@ -976,7 +1007,7 @@
       "mediaMime": "image/png",
       "contract": "Gb3p2mdMn9huPohorj7BfTRijo88nUQt2t9PkF9FN2q1",
       "tokenId": "3eyt1Pmr5xoTqAnBYgezeqcSCpNJwSAoyCAVv2XUPjDy",
-      "releaseDate": "2027-01-06",
+      "releaseDate": "2027-01-20",
       "month": "2027-01"
     },
     {
@@ -991,7 +1022,7 @@
       "mediaMime": "image/jpeg",
       "contract": "KT1MzPFKBWuSEGPmnwbPK4pfCgDcq26NMQ7o",
       "tokenId": "0",
-      "releaseDate": "2027-01-07",
+      "releaseDate": "2027-01-21",
       "month": "2027-01"
     },
     {
@@ -1006,7 +1037,7 @@
       "mediaMime": "image/png",
       "contract": "8gT6soaWCQDNoqUkNmjuiYGTSyAsuSBA5eiMGPLVuSeo",
       "tokenId": "DeBskuRJSS4Z5iUfhsRQN3XoRDQMqJhxQix4cYu3Jo5J",
-      "releaseDate": "2027-01-08",
+      "releaseDate": "2027-01-22",
       "month": "2027-01"
     },
     {
@@ -1021,7 +1052,7 @@
       "mediaMime": "image/jpeg",
       "contract": "FRoGAhqpLLLYYJyodXPtFDnZXPA2SVAQUxoMbBYp7WwS",
       "tokenId": "FGDhGac92TDFQXataqP9gBssRdHa5Poz6ETY5jmAkTTE",
-      "releaseDate": "2027-01-09",
+      "releaseDate": "2027-01-23",
       "month": "2027-01"
     },
     {
@@ -1036,7 +1067,7 @@
       "mediaMime": "image/gif",
       "contract": "KT19xG9xEDnKWd8gto3eDJNgQwKdyXopAgkM",
       "tokenId": "3",
-      "releaseDate": "2027-01-10",
+      "releaseDate": "2027-01-24",
       "month": "2027-01"
     },
     {
@@ -1051,7 +1082,7 @@
       "mediaMime": "image/jpeg",
       "contract": "KT1USo1FroLrVGEF5EWsz59LTxiRDKJ255MD",
       "tokenId": "22",
-      "releaseDate": "2027-01-11",
+      "releaseDate": "2027-01-25",
       "month": "2027-01"
     },
     {
@@ -1066,7 +1097,7 @@
       "mediaMime": "image/png",
       "contract": "KT1EfsNuqwLAWDd3o4pvfUx1CAh5GMdTrRvr",
       "tokenId": "160511",
-      "releaseDate": "2027-01-12",
+      "releaseDate": "2027-01-26",
       "month": "2027-01"
     },
     {
@@ -1081,7 +1112,7 @@
       "mediaMime": "image/png",
       "contract": "KT1EfsNuqwLAWDd3o4pvfUx1CAh5GMdTrRvr",
       "tokenId": "212054",
-      "releaseDate": "2027-01-13",
+      "releaseDate": "2027-01-27",
       "month": "2027-01"
     },
     {
@@ -1096,7 +1127,7 @@
       "mediaMime": "image/gif",
       "contract": "KT1FsepTNWUVxppn1bgNgP8iuqATUHK9zUz4",
       "tokenId": "4",
-      "releaseDate": "2027-01-14",
+      "releaseDate": "2027-01-28",
       "month": "2027-01"
     },
     {
@@ -1111,7 +1142,7 @@
       "mediaMime": "image/png",
       "contract": "5VePiYEPFGmUt3LUvMNz1HVieBdD7NyZUCejWNn5czED",
       "tokenId": "Hr87WWHPSVdC43rSfmH3j75Cjd983be39EJRt2cDh1mR",
-      "releaseDate": "2027-01-15",
+      "releaseDate": "2027-01-29",
       "month": "2027-01"
     },
     {
@@ -1126,7 +1157,7 @@
       "mediaMime": "image/png",
       "contract": "0xa7d8d9ef8D8Ce8992Df33D8b8CF4Aebabd5bD270",
       "tokenId": "121000782",
-      "releaseDate": "2027-01-16",
+      "releaseDate": "2027-01-30",
       "month": "2027-01"
     },
     {
@@ -1141,7 +1172,7 @@
       "mediaMime": "image/png",
       "contract": "BBRRFKfNspMQ8AcR6E63LvyriHjf9HHCUDhVX2thF2CX",
       "tokenId": "94sxZwAguq9ab39xH2xW5nz2GJm6NcPDJru16fkHYuCU",
-      "releaseDate": "2027-01-17",
+      "releaseDate": "2027-01-31",
       "month": "2027-01"
     },
     {
@@ -1156,8 +1187,8 @@
       "mediaMime": "image/gif",
       "contract": "KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton",
       "tokenId": "865544",
-      "releaseDate": "2027-01-18",
-      "month": "2027-01"
+      "releaseDate": "2027-02-01",
+      "month": "2027-02"
     },
     {
       "ref": "91",
@@ -1171,8 +1202,8 @@
       "mediaMime": "image/png",
       "contract": "0x2c62A822a30D88deeE07817C6E40db99B1571A58",
       "tokenId": "322",
-      "releaseDate": "2027-01-19",
-      "month": "2027-01"
+      "releaseDate": "2027-02-02",
+      "month": "2027-02"
     },
     {
       "ref": "40",
@@ -1186,8 +1217,8 @@
       "mediaMime": "image/png",
       "contract": "KT1U6EHmNxJTkvaWJ4ThczG4FSDaHC21ssvi",
       "tokenId": "1497441",
-      "releaseDate": "2027-01-20",
-      "month": "2027-01"
+      "releaseDate": "2027-02-03",
+      "month": "2027-02"
     },
     {
       "ref": "73",
@@ -1201,8 +1232,8 @@
       "mediaMime": "image/jpeg",
       "contract": "CFiQHBGsyXLZDHAsUBf6WiPhCzxeFcrKRhFGH8WwG1Re",
       "tokenId": "2sgKhB2eknngiVAsgqg6YGKTbrPzcLs1or8gWeKECyfa",
-      "releaseDate": "2027-01-21",
-      "month": "2027-01"
+      "releaseDate": "2027-02-04",
+      "month": "2027-02"
     },
     {
       "ref": "92",
@@ -1216,8 +1247,8 @@
       "mediaMime": "image/png",
       "contract": "0x9097C83E1C4640Fd18881E3Dd72a55c3c7e31DA2",
       "tokenId": "32",
-      "releaseDate": "2027-01-22",
-      "month": "2027-01"
+      "releaseDate": "2027-02-05",
+      "month": "2027-02"
     },
     {
       "ref": "24",
@@ -1231,8 +1262,8 @@
       "mediaMime": "image/jpeg",
       "contract": "0xE428C901568aB6116F4E5Ffa11fdAFe008e51B6B",
       "tokenId": "9779",
-      "releaseDate": "2027-01-23",
-      "month": "2027-01"
+      "releaseDate": "2027-02-06",
+      "month": "2027-02"
     },
     {
       "ref": "93",
@@ -1246,8 +1277,8 @@
       "mediaMime": "image/jpeg",
       "contract": "D2m7roG59ymjty9FA1GonGV4vkwbwC4ThnMk17N4GnRw",
       "tokenId": "Z4caqa1scB1SbN7FvZfZprNASbGoKVXc9n8rGNgc46i",
-      "releaseDate": "2027-01-23",
-      "month": "2027-01"
+      "releaseDate": "2027-02-06",
+      "month": "2027-02"
     },
     {
       "ref": "43",
@@ -1261,8 +1292,8 @@
       "mediaMime": "image/gif",
       "contract": "KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton",
       "tokenId": "872052",
-      "releaseDate": "2027-01-24",
-      "month": "2027-01"
+      "releaseDate": "2027-02-07",
+      "month": "2027-02"
     },
     {
       "ref": "76",
@@ -1276,8 +1307,8 @@
       "mediaMime": "image/jpeg",
       "contract": "kilio_drip",
       "tokenId": "hMJ6iAsbQaNt4i89cpf6anqi4GCoe64z31F73EzJeGR",
-      "releaseDate": "2027-01-25",
-      "month": "2027-01"
+      "releaseDate": "2027-02-08",
+      "month": "2027-02"
     },
     {
       "ref": "94",
@@ -1291,8 +1322,8 @@
       "mediaMime": "image/gif",
       "contract": "0xac7ea2f51540265080f44724aad6b80a85de3059",
       "tokenId": "1",
-      "releaseDate": "2027-01-26",
-      "month": "2027-01"
+      "releaseDate": "2027-02-09",
+      "month": "2027-02"
     },
     {
       "ref": "27",
@@ -1306,8 +1337,8 @@
       "mediaMime": "image/png",
       "contract": "0xABB3738f04Dc2Ec20f4AE4462c3d069d02AE045B",
       "tokenId": "21714009",
-      "releaseDate": "2027-01-27",
-      "month": "2027-01"
+      "releaseDate": "2027-02-10",
+      "month": "2027-02"
     },
     {
       "ref": "46",
@@ -1321,8 +1352,8 @@
       "mediaMime": "image/webp",
       "contract": "KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton",
       "tokenId": "871967",
-      "releaseDate": "2027-01-28",
-      "month": "2027-01"
+      "releaseDate": "2027-02-11",
+      "month": "2027-02"
     },
     {
       "ref": "95",
@@ -1336,8 +1367,8 @@
       "mediaMime": "image/webp",
       "contract": "0x8F50Df7c1F125cE7d29C24Db99cAFDe304cfB6aA",
       "tokenId": "87",
-      "releaseDate": "2027-01-29",
-      "month": "2027-01"
+      "releaseDate": "2027-02-12",
+      "month": "2027-02"
     },
     {
       "ref": "12",
@@ -1351,8 +1382,8 @@
       "mediaMime": "image/png",
       "contract": "0xfa5f73a166d7ca708b473ef5149521b3bc2fb911",
       "tokenId": "2",
-      "releaseDate": "2027-01-30",
-      "month": "2027-01"
+      "releaseDate": "2027-02-13",
+      "month": "2027-02"
     },
     {
       "ref": "30",
@@ -1366,8 +1397,8 @@
       "mediaMime": "image/png",
       "contract": "0x2EB732dd0ef035aECe991aC99e7ea9745779eCA1",
       "tokenId": "19",
-      "releaseDate": "2027-01-31",
-      "month": "2027-01"
+      "releaseDate": "2027-02-14",
+      "month": "2027-02"
     },
     {
       "ref": "49",
@@ -1381,8 +1412,8 @@
       "mediaMime": "image/jpeg",
       "contract": "KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton",
       "tokenId": "814499",
-      "releaseDate": "2027-01-31",
-      "month": "2027-01"
+      "releaseDate": "2027-02-14",
+      "month": "2027-02"
     },
     {
       "ref": "96",
@@ -1396,7 +1427,7 @@
       "mediaMime": "image/png",
       "contract": "0xa07a9e9606429ec60df102d11520aabba36bd11e",
       "tokenId": "11",
-      "releaseDate": "2027-02-01",
+      "releaseDate": "2027-02-15",
       "month": "2027-02"
     },
     {
@@ -1411,7 +1442,7 @@
       "mediaMime": "video/mp4",
       "contract": "0xc5e6cb9E0ea46dd4ff6c2430B0fe706eE75Fa5AA",
       "tokenId": "49",
-      "releaseDate": "2027-02-02",
+      "releaseDate": "2027-02-16",
       "month": "2027-02"
     },
     {
@@ -1426,7 +1457,7 @@
       "mediaMime": "image/jpeg",
       "contract": "0x4b3406a41399c7fd2ba65cbc93697ad9e7ea61e5",
       "tokenId": "14802",
-      "releaseDate": "2027-02-03",
+      "releaseDate": "2027-02-17",
       "month": "2027-02"
     },
     {
@@ -1441,7 +1472,7 @@
       "mediaMime": "image/gif",
       "contract": "KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton",
       "tokenId": "316732",
-      "releaseDate": "2027-02-04",
+      "releaseDate": "2027-02-18",
       "month": "2027-02"
     },
     {
@@ -1456,7 +1487,7 @@
       "mediaMime": "image/jpeg",
       "contract": "5W5qjGcKCiWzh3GmG9UpAubK9dDz3vCBgLaptyjWiGH1",
       "tokenId": "wVLaxpJ749XYW8sfeiJpyc1pJDVxtftDUPnaE4U99Vy",
-      "releaseDate": "2027-02-05",
+      "releaseDate": "2027-02-19",
       "month": "2027-02"
     },
     {
@@ -1471,7 +1502,7 @@
       "mediaMime": "image/png",
       "contract": "0x8F246d2Dda0ffFD97eBDa9419AA04ceE39cF3396",
       "tokenId": "2529",
-      "releaseDate": "2027-02-06",
+      "releaseDate": "2027-02-20",
       "month": "2027-02"
     },
     {
@@ -1486,7 +1517,7 @@
       "mediaMime": "image/png",
       "contract": "0x99DaC72F163aC98e81cf207711ec0F77bBA4CF17",
       "tokenId": "515",
-      "releaseDate": "2027-02-07",
+      "releaseDate": "2027-02-21",
       "month": "2027-02"
     },
     {
@@ -1501,7 +1532,7 @@
       "mediaMime": "video/mp4",
       "contract": "KT1AwxmgjQi4vY52E6ZRmZTMiKc1WrRXHxfh",
       "tokenId": "82",
-      "releaseDate": "2027-02-07",
+      "releaseDate": "2027-02-21",
       "month": "2027-02"
     },
     {
@@ -1516,7 +1547,7 @@
       "mediaMime": "image/jpeg",
       "contract": "KT1VHoxXoYX9LYEKe1AjPHaRq3zPZ4cZd6my",
       "tokenId": "9774",
-      "releaseDate": "2027-02-08",
+      "releaseDate": "2027-02-22",
       "month": "2027-02"
     },
     {
@@ -1531,7 +1562,7 @@
       "mediaMime": "image/jpeg",
       "contract": "KT1QmeeFyFt1WQMaqNPGuNTrS1QcNfj2EEk5",
       "tokenId": "1088",
-      "releaseDate": "2027-02-09",
+      "releaseDate": "2027-02-23",
       "month": "2027-02"
     },
     {
@@ -1546,7 +1577,7 @@
       "mediaMime": "image/jpeg",
       "contract": "KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton",
       "tokenId": "274344",
-      "releaseDate": "2027-02-11",
+      "releaseDate": "2027-02-25",
       "month": "2027-02"
     },
     {
@@ -1561,7 +1592,7 @@
       "mediaMime": "image/jpeg",
       "contract": "KT1FLrSAg3Mt6GM9izTRRw7wAkPxWhQfa6Lk",
       "tokenId": "11",
-      "releaseDate": "2027-02-12",
+      "releaseDate": "2027-02-26",
       "month": "2027-02"
     },
     {
@@ -1576,7 +1607,7 @@
       "mediaMime": "video/quicktime",
       "contract": "KT1CSmkXPiGt1LLH4jfMJEMYgzTygjjqK7sj",
       "tokenId": "32",
-      "releaseDate": "2027-02-13",
+      "releaseDate": "2027-02-27",
       "month": "2027-02"
     },
     {
@@ -1591,7 +1622,7 @@
       "mediaMime": "image/png",
       "contract": "KT1U6EHmNxJTkvaWJ4ThczG4FSDaHC21ssvi",
       "tokenId": "757373",
-      "releaseDate": "2027-02-14",
+      "releaseDate": "2027-02-28",
       "month": "2027-02"
     }
   ],
