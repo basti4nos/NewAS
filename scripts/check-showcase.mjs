@@ -6,8 +6,8 @@ const fail = (message) => errors.push(message)
 
 const works = data.works
 const reserve = data.reserve
-if (works.length !== 100) fail(`expected 100 scheduled works, got ${works.length}`)
-if (reserve.length !== 44) fail(`expected 44 reserve works, got ${reserve.length}`)
+if (works.length !== 108) fail(`expected 108 scheduled works, got ${works.length}`)
+if (reserve.length !== 36) fail(`expected 36 reserve works, got ${reserve.length}`)
 if (data.timezone !== "UTC") fail("timezone must be UTC")
 if (data.marketplaceUrl !== "https://nft.asknights.org") fail("marketplace placeholder changed")
 
@@ -50,9 +50,10 @@ for (const work of works) {
 }
 
 const expected = [
-  ["2026-11", 33, "2026-11-05"],
-  ["2026-12", 33, "2026-12-01"],
-  ["2027-01", 34, "2027-01-01"],
+  ["2026-11", 16, "2026-11-05"],
+  ["2026-12", 29, "2026-12-03"],
+  ["2027-01", 33, "2027-01-01"],
+  ["2027-02", 30, "2027-02-01"],
 ]
 if ([...byMonth.keys()].join() !== expected.map(([id]) => id).join()) {
   fail(`months ${[...byMonth.keys()].join()} != ${expected.map(([id]) => id).join()}`)
@@ -72,21 +73,51 @@ for (const [id, count, opens] of expected) {
 }
 
 const phygital = works.filter((work) => work.phygital).map((work) => work.title).sort()
-const expectedPhygital = [
-  "After Picasso #19",
-  "KRTN001",
-  "Little Bad Wolf",
-  "Portrait with Mini-Me #260",
-  "Van Gogh Blue",
-  "White Monolith",
-  "grace in bloom",
-].sort()
+const expectedPhygital = ["Van Gogh Blue"]
 if (phygital.join("|") !== expectedPhygital.join("|")) {
   fail(`phygital set changed: ${phygital.join(", ")}`)
 }
 
 if (works[0].releaseDate !== "2026-11-05") fail("first release is not 5 Nov 2026")
 if (works.some((work) => work.releaseDate < "2026-11-05")) fail("a work is scheduled before launch")
+if (works.some((work) => work.releaseDate >= "2026-11-18" && work.releaseDate <= "2026-12-02")) {
+  fail("a work is scheduled in the 18 Nov–2 Dec gap")
+}
+
+const carried = [
+  ["lumina-662", "2026-11-05"],
+  ["van-gogh-blue", "2026-11-06"],
+  ["antlered-ascension", "2026-11-07"],
+  ["such-a-lovely-time-303", "2026-11-08"],
+  ["lady-greatness", "2026-11-08"],
+  ["dd166", "2026-11-09"],
+  ["cps2-firebird-s-wing-42", "2026-11-10"],
+  ["the-leos-115", "2026-11-11"],
+  ["souvenir-study-26", "2026-11-11"],
+  ["a-smile-is-more-than-a-thought", "2026-11-12"],
+  ["srt-21-glitching-torus", "2026-11-13"],
+  ["highway-to-hell", "2026-11-14"],
+  ["untitled-sketch", "2026-11-15"],
+  ["yellow-lashes-and-no-hint-of-care", "2026-11-15"],
+  ["leaving-with-grace", "2026-11-16"],
+  ["streetfronts-in-watercolor", "2026-11-17"],
+]
+for (const [slug, date] of carried) {
+  const work = works.find((item) => item.slug === slug)
+  if (!work) fail(`missing carried work ${slug}`)
+  else if (work.releaseDate !== date) fail(`${slug} is dated ${work.releaseDate}, expected ${date}`)
+}
+
+const scheduledTokens = new Set()
+for (const work of works) {
+  const token = `${(work.contract || "").toLowerCase()}::${String(work.tokenId || "").toLowerCase()}`
+  if (scheduledTokens.has(token)) fail(`duplicate contract and token on ${work.ref} ${work.title}`)
+  scheduledTokens.add(token)
+}
+for (const work of reserve) {
+  const token = `${(work.contract || "").toLowerCase()}::${String(work.tokenId || "").toLowerCase()}`
+  if (scheduledTokens.has(token)) fail(`reserve repeats a scheduled token on ${work.ref} ${work.title}`)
+}
 
 if (errors.length) {
   console.error(errors.join("\n"))
